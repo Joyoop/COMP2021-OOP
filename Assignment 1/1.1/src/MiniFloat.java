@@ -1,9 +1,8 @@
 public class MiniFloat {
 
     public static void main(String[] args){
-        //printIntegralMiniFloats();
+        printIntegralMiniFloats();
         //mineFloatFromString(00100110);
-
     }
 
     private static float miniFloatFromString(String bitSequence){
@@ -46,7 +45,7 @@ public class MiniFloat {
         }
 
 
-        System.out.print(mantissa);
+        //System.out.print(mantissa);
 
         return (float) mantissa;
 
