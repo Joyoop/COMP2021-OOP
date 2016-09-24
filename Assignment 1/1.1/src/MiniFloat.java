@@ -1,10 +1,9 @@
 public class MiniFloat {
 
     public static void main(String[] args){
-        /*
-        printIntegralMiniFloats();*/
+        //printIntegralMiniFloats();
+        //mineFloatFromString(00100110);
 
-        miniFloatFromString("10100110");
     }
 
     private static float miniFloatFromString(String bitSequence){
@@ -39,7 +38,7 @@ public class MiniFloat {
 
         //sign
         sign = tempIntArray[0];
-        
+
         if(sign == 0){
             mantissa *= 1;
         }else if(sign == 1){
@@ -57,6 +56,17 @@ public class MiniFloat {
         String[] bitSequences = getValidMiniFloatBitSequences();
 
         // Task 2: print all the miniFloat values that are integer;
+        int len = bitSequences.length;
+        float temp = 0;
+        int count = 0;
+        for(int i = 0; i < len; i++){
+            temp = miniFloatFromString(bitSequences[i]);
+            if(temp == (int) temp){
+                System.out.println( bitSequences[i] +"==" + temp);
+                count++;
+            }
+        }
+        System.out.print("Total number of integral miniFloat values: "+count);
 
     }
 
