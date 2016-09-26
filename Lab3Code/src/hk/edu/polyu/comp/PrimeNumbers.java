@@ -1,4 +1,8 @@
-//insert the package statement here please
+/**
+ * Created by Isaac Shi on 2016/9/19.
+ */
+
+package hk.edu.polyu.comp;
 
 public class PrimeNumbers {
     public static void main (String[] args)
@@ -8,10 +12,14 @@ public class PrimeNumbers {
 
         int Range = 50; // Output the prime numbers in [2,50]
         // Run each method according to argument
-        if(Integer.parseInt(args[0].trim()) == 0)
+        if(Integer.parseInt(args[0].trim()) == 0) {
             BasicWay(Range);
-        else
+            System.out.println("This is the Basic Way");
+        } else {
             AdvancedWay(Range);
+            System.out.println("you smart ass");
+        }
+
 
         endTime   = System.currentTimeMillis();
         totalTime = endTime - startTime; //Run time of the program
@@ -26,31 +34,38 @@ public class PrimeNumbers {
        Exercise#1: Basic Way
         */
     public static void BasicWay(int Range) {
-        int Counter =0; // the number of prime numbers found so far
+        int Counter = 0; // the number of prime numbers found so far
         int Num = 2; //Start to search prime numbers from 2
 
-        while ( Num < Range) //The program will finish upon search through the range
+        while (Num < Range) //The program will finish upon search through the range
         {
-            for() //Loop to see whether the number is Prime number
-            {
-                /* In case that prime number is found
-                // Counter++;
-                // System.out.printf("%d", Num);
-                */
+            Boolean isPrime = true;
+
+            for (int i = 2; i < Num; i++) {
+
+                if (Num % i == 0) {
+                    isPrime = false;
+                }
+            }
+            if (isPrime) {
+                if(Counter == 5){
+                    System.out.println();
+                    Counter = 0;
+                }
+                Counter++;
+                System.out.printf("%d ", Num);
+
             }
 
-            if(Counter%5 == 0)
-                //Print Enter
-                Num++; // Verify the next number is prime or not
+            Num++;
         }
-
     }
 
     /*
        Exercise#2: Advanced Way
         */
     public static void AdvancedWay(int Range){
-        int Counter =0; // the number of prime numbers found so far
+        int Counter = 0; // the number of prime numbers found so far
         int Num = 2; //Start to search prime numbers from 2
 
         //By default, assume all integers are prime
@@ -58,14 +73,25 @@ public class PrimeNumbers {
         for (int i = 2; i <= Range; i++) {
             isPrime[i] = true;
         }
-        //Mark non-primes iteratively
-        for (){
 
-        }
-        //Output the Primes in 5-per-line format
-        for(){
+        while(Num <= Range){
+            //Mark non-primes iteratively
+            if (isPrime[Num]) {
+                for (int j = 2; j * Num <= Range; j++)
+                    isPrime[Num * j] = false;
+            }
 
+            if(isPrime[Num]) {
+                if(Counter == 5) {
+                    System.out.println();
+                    Counter = 0;
+                }
+                Counter++;
+                System.out.printf("%d ", Num);
+            }
+            Num++;
         }
+
 
     }
 }
