@@ -2,17 +2,17 @@ public class MiniFloat {
 
     public static void main(String[] args){
         printIntegralMiniFloats();
-        //mineFloatFromString(00100110);
+        //miniFloatFromString("01111111");
     }
 
     private static float miniFloatFromString(String bitSequence){
         // Task1: compute the miniFloat value from "bitSequence";
         int len = bitSequence.length();
         int[] tempIntArray = new int[len];
-        double result = 0.0;
+        float result = 0;
         int sign;
         int exponent = 0;
-        double mantissa = 1.0;
+        float mantissa = 1;
 
         //put original string into CharArray
         for(int i = 0; i < len ; i++){
@@ -22,18 +22,22 @@ public class MiniFloat {
         //mantissa
         int temp = -1;
         for(int k = 0; k < 3; k++) {
-            mantissa += tempIntArray[k + 5] * (double) Math.pow(2, temp);
+            mantissa += tempIntArray[k + 5] * (float) Math.pow(2, temp);
             temp -= 1;
         }
-        //System.out.println(mantissa);
+      //  System.out.println(mantissa);
 
         //2's component
         for(int j = 4; j > 0; j--){
-            if(tempIntArray[j] == 1){
-                exponent += (int) Math.pow(2,(4-j));
+            exponent = Integer.parseInt(bitSequence.substring(1,5),2);
+            if(tempIntArray[1] == 1){
+                exponent -= 16;
             }
         }
-        mantissa *= (double) Math.pow(2,exponent);
+
+
+      //  System.out.println(exponent);
+        mantissa *= (float) Math.pow(2,exponent);
 
         //sign
         sign = tempIntArray[0];
@@ -45,23 +49,23 @@ public class MiniFloat {
         }
 
 
-        //System.out.print(mantissa);
+     //   System.out.print(mantissa);
 
-        return (float) mantissa;
+        return mantissa;
 
     }
 
     private static void printIntegralMiniFloats(){
-        String[] bitSequences = getValidMiniFloatBitSequences();
+        String[] bitSequence = getValidMiniFloatBitSequences();
 
         // Task 2: print all the miniFloat values that are integer;
-        int len = bitSequences.length;
+        int len = bitSequence.length;
         float temp = 0;
         int count = 0;
         for(int i = 0; i < len; i++){
-            temp = miniFloatFromString(bitSequences[i]);
+            temp = miniFloatFromString(bitSequence[i]);
             if(temp == (int) temp){
-                System.out.println( bitSequences[i] +"==" + temp);
+                System.out.println( bitSequence[i] +" == " + temp);
                 count++;
             }
         }
