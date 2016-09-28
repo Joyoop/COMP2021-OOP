@@ -19,39 +19,34 @@ public class MiniFloat {
             tempIntArray[i] = Character.getNumericValue(bitSequence.charAt(i));
         }
 
+        //sign
+        sign = tempIntArray[0];
+
         //mantissa
         int temp = -1;
         for(int k = 0; k < 3; k++) {
             mantissa += tempIntArray[k + 5] * (float) Math.pow(2, temp);
             temp -= 1;
         }
-      //  System.out.println(mantissa);
+      //System.out.println(mantissa);
 
         //2's component
         for(int j = 4; j > 0; j--){
             exponent = Integer.parseInt(bitSequence.substring(1,5),2);
-            if(tempIntArray[1] == 1){
+            if(tempIntArray[1] == 1)
                 exponent -= 16;
-            }
         }
+      //System.out.println(exponent);
+
+        result = mantissa * (float) Math.pow(2,exponent);
+
+        if(sign == 1)
+            result *= -1;
 
 
-      //  System.out.println(exponent);
-        mantissa *= (float) Math.pow(2,exponent);
+     // System.out.print(result);
 
-        //sign
-        sign = tempIntArray[0];
-
-        if(sign == 0){
-            mantissa *= 1;
-        }else if(sign == 1){
-            mantissa *= -1;
-        }
-
-
-     //   System.out.print(mantissa);
-
-        return mantissa;
+        return result;
 
     }
 
