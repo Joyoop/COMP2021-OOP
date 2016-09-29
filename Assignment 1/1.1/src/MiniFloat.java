@@ -9,9 +9,9 @@ public class MiniFloat {
         // Task1: compute the miniFloat value from "bitSequence";
         int len = bitSequence.length();
         int[] tempIntArray = new int[len];
-        float result = 0;
+        float result;
         int sign;
-        int exponent = 0;
+        int exponent;
         float mantissa = 1;
 
         //put original string into CharArray
@@ -31,11 +31,10 @@ public class MiniFloat {
       //System.out.println(mantissa);
 
         //2's component
-        for(int j = 4; j > 0; j--){
-            exponent = Integer.parseInt(bitSequence.substring(1,5),2);
-            if(tempIntArray[1] == 1)
+        exponent = Integer.parseInt(bitSequence.substring(1,5),2);
+        if(tempIntArray[1] == 1)
                 exponent -= 16;
-        }
+
       //System.out.println(exponent);
 
         result = mantissa * (float) Math.pow(2,exponent);
@@ -51,16 +50,16 @@ public class MiniFloat {
     }
 
     private static void printIntegralMiniFloats(){
-        String[] bitSequence = getValidMiniFloatBitSequences();
+        String[] bitSequences = getValidMiniFloatBitSequences();
 
         // Task 2: print all the miniFloat values that are integer;
-        int len = bitSequence.length;
+        int len = bitSequences.length;
         float temp = 0;
         int count = 0;
         for(int i = 0; i < len; i++){
-            temp = miniFloatFromString(bitSequence[i]);
+            temp = miniFloatFromString(bitSequences[i]);
             if(temp == (int) temp){
-                System.out.println( bitSequence[i] +" == " + temp);
+                System.out.println( bitSequences[i] +" == " + temp);
                 count++;
             }
         }
