@@ -50,7 +50,7 @@ public class Complex {
         System.out.println("a = " + a.asString());
         System.out.println("b = " + b.asString());
         System.out.println("Real(a) = " + a.re());
-        System.out.println("Imaginary(a) = " + a.im());
+        System.out.println("Imaginary(b) = " + b.im());
         System.out.println("a + b = " + a.add(b).asString());
         System.out.println("a * b = " + a.multiply(b).asString());
         System.out.println("b * a = " + b.multiply(a).asString());
