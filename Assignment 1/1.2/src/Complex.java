@@ -10,7 +10,7 @@ public class Complex {
     }
 
     // return a string representation of the invoking Complex object
-    public String toString() {
+    public String asString() {
         if (im == 0)
             return re + "";
         if (re == 0)
@@ -47,13 +47,13 @@ public class Complex {
         Complex a = new Complex(5.0, -6.0);
         Complex b = new Complex(-3.0, 4.0);
 
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
+        System.out.println("a = " + a.asString());
+        System.out.println("b = " + b.asString());
         System.out.println("Real(a) = " + a.re());
         System.out.println("Imaginary(a) = " + a.im());
-        System.out.println("a + b = " + a.add(b));
-        System.out.println("a * b = " + a.multiply(b));
-        System.out.println("b * a = " + b.multiply(a));
+        System.out.println("a + b = " + a.add(b).asString());
+        System.out.println("a * b = " + a.multiply(b).asString());
+        System.out.println("b * a = " + b.multiply(a).asString());
 
     }
 
