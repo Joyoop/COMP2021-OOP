@@ -18,19 +18,21 @@ public class Rational {
         Rational a = this;
 
         // special cases
-        if (a.compareTo(zero) == 0) return b;
-        if (b.compareTo(zero) == 0) return a;
+        if (a.compareTo(zero) == 0)
+            return b;
+        if (b.compareTo(zero) == 0)
+            return a;
 
         // Find gcd of numerators and denominators
-        int f = gcd(a.num, b.num);
-        int g = gcd(a.den, b.den);
+        int f = gcd(a.numerator, b.numerator);
+        int g = gcd(a.denominator, b.denominator);
 
         // add cross-product terms for numerator
-        Rational s = new Rational((a.num / f) * (b.den / g) + (b.num / f) * (a.den / g),
-                lcm(a.den, b.den));
+        Rational s = new Rational((a.numerator / f) * (b.denominator / g) + (b.numerator/ f) * (a.denominator / g),
+                lcm(a.denominator, b.denominator));
 
         // multiply back in
-        s.num *= f;
+        s.numerator *= f;
         return s;
 
     }
@@ -56,9 +58,39 @@ public class Rational {
 
     }
 
+    // return the numerator and denominator of (this)
+    public int numerator()   { return numerator; }
+    public int denominator() { return denominator; }
+
+
     public static void main(String[] args){
         // Task 3: create Rational objects, add or multiply them, and
         //         print the results out to check they are correct
+        Rational x, y, z;
+
+        // 1/2 + 1/3 = 5/6
+        x = new Rational(1, 2);
+        y = new Rational(1, 3);
+        z = x.add(y);
+        System.out.println(z);
+
+        // 8/9 + 1/9 = 1
+        x = new Rational(8, 9);
+        y = new Rational(1, 9);
+        z = x.add(y);
+        System.out.println(z);
+
+        // 1/200000000 + 1/300000000 = 1/120000000
+        x = new Rational(1, 200000000);
+        y = new Rational(1, 300000000);
+        z = x.add(y);
+        System.out.println(z);
+
+        // 1073741789/20 + 1073741789/30 = 1073741789/12
+        x = new Rational(1073741789, 20);
+        y = new Rational(1073741789, 30);
+        z = x.add(y);
+        System.out.println(z);
 
     }
 
