@@ -12,6 +12,14 @@ public class Rational {
         denominator = 1;
     }
 
+    public compareTo(){
+
+    }
+
+    public gcd(){
+        
+    }
+
     public Rational add(Rational b){
         // Assume 'other' is not null
         // Task 2: complete the method
