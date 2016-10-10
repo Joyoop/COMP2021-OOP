@@ -12,36 +12,17 @@ public class Rational {
         denominator = 1;
     }
 
-    public compareTo(){
-
-    }
-
-    public gcd(){
-
-    }
-
     public Rational add(Rational b){
         // Assume 'other' is not null
         // Task 2: complete the method
         Rational a = this;
 
-        // special cases
-        if (a.compareTo(zero) == 0)
-            return b;
-        if (b.compareTo(zero) == 0)
-            return a;
+        int commonDenominator = denominator * b.denominator();
+        int numerator1 = numerator * b.denominator();
+        int numerator2 = b.numerator() * denominator;
+        int sum = numerator1 + numerator2;
 
-        // Find gcd of numerators and denominators
-        int f = gcd(a.numerator, b.numerator);
-        int g = gcd(a.denominator, b.denominator);
-
-        // add cross-product terms for numerator
-        Rational s = new Rational((a.numerator / f) * (b.denominator / g) + (b.numerator/ f) * (a.denominator / g),
-                lcm(a.denominator, b.denominator));
-
-        // multiply back in
-        s.numerator *= f;
-        return s;
+        return new Rational (sum, commonDenominator);
 
     }
 
