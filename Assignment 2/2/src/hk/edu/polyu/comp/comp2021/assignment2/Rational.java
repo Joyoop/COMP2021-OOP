@@ -17,7 +17,7 @@ public class Rational {
     }
 
     public gcd(){
-        
+
     }
 
     public Rational add(Rational b){
