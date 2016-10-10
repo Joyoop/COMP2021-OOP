@@ -61,25 +61,25 @@ public class Rational {
         x = new Rational(1, 2);
         y = new Rational(1, 3);
         z = x.add(y);
-        System.out.println(z);
+        System.out.println(z.asString());
 
         // 8/9 + 1/9 = 1
         x = new Rational(8, 9);
         y = new Rational(1, 9);
         z = x.add(y);
-        System.out.println(z);
+        System.out.println(z.asString());
 
         // 1/200000000 + 1/300000000 = 1/120000000
         x = new Rational(1, 200000000);
         y = new Rational(1, 300000000);
         z = x.add(y);
-        System.out.println(z);
+        System.out.println(z.asString());
 
         // 1073741789/20 + 1073741789/30 = 1073741789/12
         x = new Rational(1073741789, 20);
         y = new Rational(1073741789, 30);
         z = x.add(y);
-        System.out.println(z);
+        System.out.println(z.asString());
 
     }
 
