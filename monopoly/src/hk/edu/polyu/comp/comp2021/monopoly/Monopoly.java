@@ -1,3 +1,5 @@
+package hk.edu.polyu.comp.comp2021.monopoly;
+
 import java.util.Scanner;
 
 public class Monopoly {

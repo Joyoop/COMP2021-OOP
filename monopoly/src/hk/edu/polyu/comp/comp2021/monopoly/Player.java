@@ -1,3 +1,5 @@
+package hk.edu.polyu.comp.comp2021.monopoly;
+
 public class Player {
 	int totalWalk = 0;
 	int position = 0;

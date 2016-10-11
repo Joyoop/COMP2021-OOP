@@ -1,3 +1,5 @@
+package hk.edu.polyu.comp.comp2021.monopoly;
+
 public class GoSquare extends Square {
 	public GoSquare(String name) {
 		super(name);

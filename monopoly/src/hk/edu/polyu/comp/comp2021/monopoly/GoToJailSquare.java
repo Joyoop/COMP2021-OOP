@@ -1,3 +1,5 @@
+package hk.edu.polyu.comp.comp2021.monopoly;
+
 public class GoToJailSquare extends Square {
 	public GoToJailSquare(String name) {
 		super(name);

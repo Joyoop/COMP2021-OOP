@@ -1,3 +1,4 @@
+package hk.edu.polyu.comp.comp2021.monopoly;
 import java.util.Random;
 
 public class HouseSquare extends Square {
