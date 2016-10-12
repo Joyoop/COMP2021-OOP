@@ -46,8 +46,10 @@ public class Rational {
     }
 
     public int compareTo(Rational other) {
+
         int temp1 = this.numerator * other.denominator;
         int temp2 = this.denominator * other.numerator;
+
         if (temp1 < temp2) {
             return -1;
         }
@@ -59,10 +61,12 @@ public class Rational {
 
     // is this Rational object equal to other?
     public boolean equals(Object other) {
-        if (other == null)
+        if (other == null) {
             return false;
-        if (other.getClass() != this.getClass())
+        }
+        if (other.getClass() != this.getClass()) {
             return false;
+        }
         Rational temp = (Rational) other;
         return this.compareTo(temp) == 0;
     }
@@ -70,10 +74,12 @@ public class Rational {
     // is this Rational object less than other?
     // would be used in Complex class construction
     public boolean less(Object other) {
-        if (other == null)
+        if (other == null) {
             return false;
-        if (other.getClass() != this.getClass())
+        }
+        if (other.getClass() != this.getClass()) {
             return false;
+        }
         Rational that = (Rational) other;
         return this.compareTo(that) == -1;
     }
@@ -81,10 +87,12 @@ public class Rational {
     // is this Rational object larger than other?
     // would be used in Complex class construction
     public boolean larger(Object other) {
-        if (other == null)
+        if (other == null) {
             return false;
-        if (other.getClass() != this.getClass())
+        }
+        if (other.getClass() != this.getClass()) {
             return false;
+        }
         Rational that = (Rational) other;
         return this.compareTo(that) == 1;
     }
