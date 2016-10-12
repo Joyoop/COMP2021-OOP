@@ -8,8 +8,8 @@ public class Rational {
     public Rational(int numerator, int denominator){
         // Assume 'denominator' is not 0;
         // Task 2: complete the constructor
-        numerator = 0;
-        denominator = 1;
+        this.numerator = numerator;
+        this.denominator = denominator;
     }
 
     public Rational add(Rational b){
@@ -17,9 +17,9 @@ public class Rational {
         // Task 2: complete the method
         Rational a = this;
 
-        int commonDenominator = denominator * b.denominator();
-        int numerator1 = numerator * b.denominator();
-        int numerator2 = b.numerator() * denominator;
+        int commonDenominator = this.denominator * b.denominator();
+        int numerator1 = this.numerator * b.denominator();
+        int numerator2 = b.numerator() * this.denominator;
         int sum = numerator1 + numerator2;
 
         return new Rational (sum, commonDenominator);
@@ -36,6 +36,32 @@ public class Rational {
         Rational d = new Rational(b.numerator, a.denominator);
         return new Rational(c.numerator * d.numerator, c.denominator * d.denominator);
 
+    }
+
+    // return -this
+    public Rational negate() {
+        return new Rational(-numerator, denominator);
+    }
+
+    // return this - that
+    public Rational minus(Rational other) {
+        return this.add(other.negate());
+    }
+
+    public int compareTo(Rational that) {
+        long lhs = this.numerator * that.denominator;
+        long rhs = this.denominator * that.numerator;
+        if (lhs < rhs) return -1;
+        if (lhs > rhs) return +1;
+        return 0;
+    }
+
+    // is this Rational object equal to other?
+    public boolean equals(Object other) {
+        if (other == null) return false;
+        if (other.getClass() != this.getClass()) return false;
+        Rational that = (Rational) other;
+        return this.compareTo(that) == 0;
     }
 
     public String asString(){
@@ -70,15 +96,21 @@ public class Rational {
         System.out.println(z.asString());
 
         // 1/200000000 + 1/300000000 = 1/120000000
-        x = new Rational(1, 200000000);
-        y = new Rational(1, 300000000);
-        z = x.add(y);
+        x = new Rational(1, 2);
+        y = new Rational(1, 3);
+        z = x.multiply(y);
         System.out.println(z.asString());
 
         // 1073741789/20 + 1073741789/30 = 1073741789/12
-        x = new Rational(1073741789, 20);
-        y = new Rational(1073741789, 30);
-        z = x.add(y);
+        x = new Rational(14, 20);
+        y = new Rational(12, 30);
+        z = x.multiply(y);
+        System.out.println(z.asString());
+
+        // 1/6 - -4/-8 = -1/3
+        x = new Rational(1, 6);
+        y = new Rational(-4, -8);
+        z = x.minus(y);
         System.out.println(z.asString());
 
     }
