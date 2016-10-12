@@ -39,8 +39,14 @@ public class Complex {
     public Complex multiply(Complex b) {
         // Task 5: multiply method
         Complex a = this;
-        Rational real = a.re.multiply(b.re).minus(im.multiply(b.im));
-        Rational imag = a.re.multiply(b.im).add(a.im.multiply(b.re));
+
+        Rational temp1 = a.re.multiply(b.re);
+        Rational temp2 = a.im.multiply(b.im);
+        Rational temp3 = a.re.multiply(b.im);
+        Rational temp4 = a.im.multiply(b.re);
+
+        Rational real = temp1.minus(temp2);
+        Rational imag = temp3.add(temp4);
         return new Complex(real, imag);
     }
 
