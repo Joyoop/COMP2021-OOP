@@ -37,12 +37,10 @@ public class Rational {
 
     }
 
-    // return -Rational number
     public Rational negate() {
         return new Rational(-numerator, denominator);
     }
 
-    // return this - other
     public Rational minus(Rational other) {
         return this.add(other.negate());
     }
@@ -50,8 +48,12 @@ public class Rational {
     public int compareTo(Rational other) {
         int temp1 = this.numerator * other.denominator;
         int temp2 = this.denominator * other.numerator;
-        if (temp1 < temp2) return -1;
-        if (temp1 > temp2) return +1;
+        if (temp1 < temp2) {
+            return -1;
+        }
+        if (temp1 > temp2) {
+            return +1;
+        }
         return 0;
     }
 
@@ -76,6 +78,17 @@ public class Rational {
         return this.compareTo(that) == -1;
     }
 
+    // is this Rational object larger than other?
+    // would be used in Complex class construction
+    public boolean larger(Object other) {
+        if (other == null)
+            return false;
+        if (other.getClass() != this.getClass())
+            return false;
+        Rational that = (Rational) other;
+        return this.compareTo(that) == 1;
+    }
+
     public String asString(){
         // Task 2: complete the method
         if (denominator == 1)
@@ -85,7 +98,6 @@ public class Rational {
 
     }
 
-    // return the numerator and denominator of (this)
     public int numerator()   { return numerator; }
     public int denominator() { return denominator; }
 
@@ -93,31 +105,31 @@ public class Rational {
     public static void main(String[] args){
         // Task 3: create Rational objects, add or multiply them, and
         //         print the results out to check they are correct
-        Rational x, y, z;
+        Rational x = new Rational(1,2);
+        Rational y = new Rational(1,3);
+        Rational z;
 
+        System.out.println("x = " + x.asString());
+        System.out.println("y = " + y.asString());
         // 1/2 + 1/3 = 5/6
-        x = new Rational(1, 2);
-        y = new Rational(1, 3);
         z = x.add(y);
-        System.out.println(z.asString());
+        System.out.println("x + y = " + z.asString());
+
+        //1/2 * 1/3 = 1/6
+        z = x.multiply(y);
+        System.out.println("x * y = " + z.asString());
 
         // 8/9 + 1/9 = 1
         x = new Rational(8, 9);
         y = new Rational(1, 9);
         z = x.add(y);
-        System.out.println(z.asString());
+        System.out.println("x2 * y2 = " + z.asString());
 
-        // 1/200000000 + 1/300000000 = 1/120000000
-        x = new Rational(1, 2);
-        y = new Rational(1, 3);
-        z = x.multiply(y);
-        System.out.println(z.asString());
-
-        // 1/6 - -4/-8 = -1/3
+        // 1/6 - -4/-8 = -1/3 For test use
         x = new Rational(1, 6);
         y = new Rational(-4, -8);
         z = x.minus(y);
-        System.out.println(z.asString());
+        System.out.println("x3 - y3 = " + z.asString());
 
     }
 

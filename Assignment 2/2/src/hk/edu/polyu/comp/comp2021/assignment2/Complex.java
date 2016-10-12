@@ -6,47 +6,52 @@ public class Complex {
     private final Rational re;   // the real part
     private final Rational im;   // the imaginary part
 
-    // create a new object with the given real and imaginary parts
     public Complex(Rational real, Rational imag) {
+        // Task 5: constructor
         re = real;
         im = imag;
     }
 
-    // return a string representation of the invoking Complex object
     public String asString() {
-        if (im.equals(0))
+        // Task 5: asString method
+        if (im.equals(0)) {
             return re.asString() + "";
-        if (re.equals(0))
+        }
+
+        if (re.equals(0)) {
             return im.asString() + "i";
-        if (im.less(0))
+        }
+
+        if (im.less(0)) {
             return re + " - " + (im.negate()) + "i";
+        }
         return re.asString() + " + " + im.asString() + "i";
     }
 
-    // return a new Complex object whose value is (this + b)
     public Complex add(Complex b) {
-        Complex a = this;             // invoking object
+        // Task 5: add method
+        Complex a = this;
         Rational real = a.re.add(b.re);
         Rational imag = a.im.add(b.im);
         return new Complex(real, imag);
     }
 
-    // return a new Complex object whose value is (this * b)
     public Complex multiply(Complex b) {
+        // Task 5: multiply method
         Complex a = this;
         Rational real = a.re.multiply(b.re).minus(im.multiply(b.im));
         Rational imag = a.re.multiply(b.im).add(a.im.multiply(b.re));
         return new Complex(real, imag);
     }
 
-
-    // return the real or imaginary part
     public Rational re() { return re; }
     public Rational im() { return im; }
 
 
     // sample client for testing
     public static void main(String[] args) {
+        // Task 6: create Complex objects, add or multiply them, and
+        //         print the results out to check they are correct
         Rational re1 = new Rational(5, 1);
         Rational im1 = new Rational(6,1);
 
