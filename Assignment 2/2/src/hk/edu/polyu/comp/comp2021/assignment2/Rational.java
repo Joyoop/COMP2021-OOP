@@ -12,14 +12,13 @@ public class Rational {
         this.denominator = denominator;
     }
 
-    public Rational add(Rational b){
+    public Rational add(Rational other){
         // Assume 'other' is not null
         // Task 2: complete the method
-        Rational a = this;
 
-        int commonDenominator = this.denominator * b.denominator();
-        int numerator1 = this.numerator * b.denominator();
-        int numerator2 = b.numerator() * this.denominator;
+        int commonDenominator = this.denominator * other.denominator();
+        int numerator1 = this.numerator * other.denominator();
+        int numerator2 = other.numerator() * this.denominator;
         int sum = numerator1 + numerator2;
 
         return new Rational (sum, commonDenominator);
@@ -38,30 +37,43 @@ public class Rational {
 
     }
 
-    // return -this
+    // return -Rational number
     public Rational negate() {
         return new Rational(-numerator, denominator);
     }
 
-    // return this - that
+    // return this - other
     public Rational minus(Rational other) {
         return this.add(other.negate());
     }
 
-    public int compareTo(Rational that) {
-        long lhs = this.numerator * that.denominator;
-        long rhs = this.denominator * that.numerator;
-        if (lhs < rhs) return -1;
-        if (lhs > rhs) return +1;
+    public int compareTo(Rational other) {
+        int temp1 = this.numerator * other.denominator;
+        int temp2 = this.denominator * other.numerator;
+        if (temp1 < temp2) return -1;
+        if (temp1 > temp2) return +1;
         return 0;
     }
 
     // is this Rational object equal to other?
     public boolean equals(Object other) {
-        if (other == null) return false;
-        if (other.getClass() != this.getClass()) return false;
+        if (other == null)
+            return false;
+        if (other.getClass() != this.getClass())
+            return false;
+        Rational temp = (Rational) other;
+        return this.compareTo(temp) == 0;
+    }
+
+    // is this Rational object less than other?
+    // would be used in Complex class construction
+    public boolean less(Object other) {
+        if (other == null)
+            return false;
+        if (other.getClass() != this.getClass())
+            return false;
         Rational that = (Rational) other;
-        return this.compareTo(that) == 0;
+        return this.compareTo(that) == -1;
     }
 
     public String asString(){
@@ -98,12 +110,6 @@ public class Rational {
         // 1/200000000 + 1/300000000 = 1/120000000
         x = new Rational(1, 2);
         y = new Rational(1, 3);
-        z = x.multiply(y);
-        System.out.println(z.asString());
-
-        // 1073741789/20 + 1073741789/30 = 1073741789/12
-        x = new Rational(14, 20);
-        y = new Rational(12, 30);
         z = x.multiply(y);
         System.out.println(z.asString());
 

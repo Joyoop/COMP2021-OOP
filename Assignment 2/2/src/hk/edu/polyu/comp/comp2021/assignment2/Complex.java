@@ -18,8 +18,8 @@ public class Complex {
             return re.asString() + "";
         if (re.equals(0))
             return im.asString() + "i";
-        //if (im.compareTo(0) == -1)
-          //  return re + " - " + (im.negate()) + "i";
+        if (im.less(0))
+            return re + " - " + (im.negate()) + "i";
         return re.asString() + " + " + im.asString() + "i";
     }
 
