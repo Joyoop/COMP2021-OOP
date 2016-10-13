@@ -23,10 +23,11 @@ public class Complex {
         }
 
         if (im.less(0)) {
-            return re + " - " + (im.negate()) + "i";
+            return re.asString() + " - " + (im.negate().asString()) + "i";
         }
-        return re.asString() + " + " + im.asString() + "i";
+        return "（" + re.asString() + " ，" + im.asString() + "i）";
     }
+
 
     public Complex add(Complex b) {
         // Task 5: add method
