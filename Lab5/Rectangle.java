@@ -67,15 +67,13 @@ public class Rectangle {
 
     // printer method
     public void print() {
-        System.out.println("("+ topLeft.print() + "," + bottomRight.print() + ")");
+        topLeft.print();
+        bottomRight.print();
     }
 
-    // extra task
-    // if you finish all tasks, please un-comment following
-    // code and finish it if you like
-    // public double intersection (Rectangle rhs) {
-    //    // your code here
-    // }
+    public double intersection (Rectangle rhs) {
+        
+    }
 
 
     // the two points.
