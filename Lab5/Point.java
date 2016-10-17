@@ -8,12 +8,20 @@ import java.lang.Math; // for math methods
 // Task-1 Point Class (Task-3)
 public class Point {
 
-    public static void main() {
+    public static void main(String[] args) {
         // your code here
-        Point x = (3,5);
-        Point y = (1,3);
-        print(x);
-        print(y);
+        Point x = new Point();
+        Point y = new Point();
+        x.setCoord0(1.0);
+        x.setCoord1(1.0);
+        y.setCoord0(2.0);
+        y.setCoord1(2.0);
+        x.print();
+        y.print();
+        x.getPoint().print();
+        System.out.println(x.distanceTo(y));
+        System.out.println(x.getCoord0());
+        System.out.println(y.getCoord1());
 
     }
 
@@ -24,53 +32,53 @@ public class Point {
     }
 
     // please implement your own constructor
-    Point(double x, double y) {
-        this.x = coord0;
-        this.y = coord1;
+    Point(double coord0, double coord1) {
+        this.coord0 = coord0;
+        this.coord1 = coord1;
     }
 
     // setter method.
-    public void setPoint(args1, args2) {
+    public void setPoint(double x, double y) {
         // your code here
-        x = arg1;
-        y = arg2;
+        this.coord0 = x;
+        this.coord1 = y;
     }
 
     // setter method for the first coordinate
-    public void setCoord0(arg) {
+    public void setCoord0(double x) {
         // your code here
-        x = arg;
+        this.coord0 = x;
     }
 
     // setter method for the second coordinate
-    public void setCoord1(arg) {
+    public void setCoord1(double y) {
         // your code here
-        y = arg;
+        this.coord1 = y;
     }
 
     // getter method for the point
     public Point getPoint() {
         // your code here
-        return (x, y)
+        return new Point(this.coord0, this.coord1);
     }
 
     // getter method for the first coordinate
-    public int getCoord0() {
+    public double getCoord0() {
         // your code here
-        return x;
+        return coord0;
     }
 
     // getter method for the second coordinate
-    public int getCoord1() {
+    public double getCoord1() {
         // your code here
-        return y;
+        return this.coord1;
     }
 
     // calculate distance from another point
     public double distanceTo(int coord0, int coord1) {
         // your code here
-        double dx = this.x - coord0;
-        double dy = this.x - coord1;
+        double dx = this.coord0 - coord0;
+        double dy = this.coord1 - coord1;
         return Math.sqrt(dx*dx + dy*dy);
     }
 
@@ -78,15 +86,15 @@ public class Point {
     // using the Point class as input
     public double distanceTo(Point rhs) {
         // your code here
-        double dx = this.x - rhs.x;
-        double dy = this.y - rhs.y;
+        double dx = this.coord0 - rhs.coord0;
+        double dy = this.coord1 - rhs.coord1;
         return Math.sqrt(dx*dx + dy*dy);
     }
 
     // print all coordinates
     public void print() {
         // your code here
-        return "(" + x + ", " + y + ")";
+        System.out.println("(" + coord0 + ", " + coord1 + ")");
     }
 
     // the two coordinates index for point
