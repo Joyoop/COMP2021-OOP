@@ -7,18 +7,18 @@ import java.lang.*;
 class Rabbit extends Runner {
     // default constructor, do not modify
     Rabbit() {
-        super.name = "None";
-        super.speed = 0;
-        super.location = 0;
+        super.setName("None");
+        super.setSpeed(0);
+        super.setLocation(0);
         napChance = 0;
     }
 
     // please define your own constructor with proper variables
     // using keyword *super.*
     Rabbit(String name, float speed, float location, float napChance) {
-        this.location = location;
-        this.name = name;
-        this.speed = speed;
+        this.setLocation(location);
+        this.setName(name);
+        this.setSpeed(speed);
         this.napChance = napChance;
     }
 
@@ -41,7 +41,8 @@ class Rabbit extends Runner {
         // your code here
         float temp = (float) Math.random();
         if(temp <= napChance){
-            location += speed;
+            float loc = this.getLocation() + this.getSpeed();
+            this.setLocation(loc += this.getSpeed());
         }else{
             //location = location;
         }
@@ -55,7 +56,7 @@ class Rabbit extends Runner {
 
     // a default print state
     public void printCurrentState() {
-        System.out.println("rabbit: name - " + super.name + " loc - " + super.location + " speed - " + super.speed);
+        System.out.println("rabbit: name - " + super.getName() + " loc - " + super.getLocation() + " speed - " + super.getSpeed());
     }
 
     private float napChance;

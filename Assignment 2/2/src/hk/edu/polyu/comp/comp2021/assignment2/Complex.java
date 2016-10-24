@@ -25,7 +25,7 @@ public class Complex {
         if (im.less(0)) {
             return re.asString() + " - " + (im.negate().asString()) + "i";
         }
-        return "（" + re.asString() + " ，" + im.asString() + "i）";
+        return  re.asString() + " + " + im.asString() + "i";
     }
 
 

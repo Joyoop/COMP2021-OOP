@@ -28,7 +28,7 @@ public class Runner {
         this.speed = arg;
     }
 
-    public void setLocation(int location) {
+    public void setLocation(float location) {
         // your code here
         this.location = location;
     }
@@ -61,7 +61,7 @@ public class Runner {
     }
 
     // choosing one of three modifiers
-    public String name;
-    public float speed;
-    public float location;
+    private String name;
+    private float speed;
+    private float location;
 }

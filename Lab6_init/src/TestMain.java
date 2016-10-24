@@ -47,9 +47,9 @@ public class TestMain {
                 }
             } else {
                 if (inputRabbit.getLocation() >= targetDistance && inputTortoise.getLocation() < targetDistance) {
-                    System.out.println("rabbit name " + inputRabbit.name + " win !");
+                    System.out.println("rabbit name " + inputRabbit.getName() + " win !");
                 } else if (inputTortoise.getLocation() >= targetDistance && inputRabbit.getLocation() < targetDistance) {
-                    System.out.println("tortoise name " + inputTortoise.name + " win !");
+                    System.out.println("tortoise name " + inputTortoise.getName() + " win !");
                 } else if (inputTortoise.getLocation() >= targetDistance && inputRabbit.getLocation() >= targetDistance) {
                     System.out.println("draw !");
                 }
