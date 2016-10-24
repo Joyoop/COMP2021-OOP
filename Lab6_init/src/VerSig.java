@@ -59,5 +59,15 @@ public class VerSig {
         System.out.printf(Integer.toHexString(thedigest[i]));
 
         }
+        System.out.println();
+        System.out.printf(hexString.toString());
+    }
+
+    public static String readFile("x"){
+        Scanner fileIn = new Scanner(new File("x"));
+
+        String result = fileIn.nextLine(); // Reads one line from the file
+
+        return result;
     }
 }
