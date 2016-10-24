@@ -13,6 +13,7 @@ public class VerSig {
             //VerSig result = new VerSig();
             System.out.println(mod(35, 78));
             hashString("h0 there");
+            System.out.println(29);
         }
     }
 
@@ -63,8 +64,8 @@ public class VerSig {
         System.out.printf(hexString.toString());
     }
 
-    public static String readFile("x"){
-        Scanner fileIn = new Scanner(new File("x"));
+    public static String readFile(String file_path){
+        BufferedReader in = new BufferedReader(new FileReader("file_path"));
 
         String result = fileIn.nextLine(); // Reads one line from the file
 
