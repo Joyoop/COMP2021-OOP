@@ -12,7 +12,7 @@ public class VerSig {
         if (ver == 3) {
             //VerSig result = new VerSig();
             System.out.println(mod(35, 78));
-            hashString("h0 there");
+            hashString("hi there");
             System.out.println(29);
         }
     }
@@ -56,19 +56,14 @@ public class VerSig {
                 hexString.append(Integer.toHexString(0xFF & thedigest[i]));
             }
         }
-        for(int i = 0; i < thedigest.length; i++){
-        System.out.printf(Integer.toHexString(thedigest[i]));
-
-        }
-        System.out.println();
         System.out.printf(hexString.toString());
     }
-
+/*
     public static String readFile(String file_path){
         BufferedReader in = new BufferedReader(new FileReader("file_path"));
 
         String result = fileIn.nextLine(); // Reads one line from the file
 
         return result;
-    }
+    }*/
 }
