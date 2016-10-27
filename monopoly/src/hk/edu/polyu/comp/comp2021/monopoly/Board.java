@@ -35,11 +35,19 @@ public class Board {
 	}
 	
 	public Square movePlayer(Player player, int face, boolean count) {
-		if(player.isBrokeOut()){ return squares[player.getCurrentPosition()]; }
+		//see if the current player is broke out
+		if(player.isBrokeOut()){
+			return squares[player.getCurrentPosition()];
+		}
+
 		int newPosition = normalizePosition(player.getCurrentPosition() + face);
+
 		player.setPosition(newPosition);
+
 		Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
+
 		squares[newPosition].doAction(player, this);
+
 		if(player.getMoney().isBrokeOut()){
 			Util.print(player, player.getName() + " has been broke out!");
 			player.setBrokeOut(true);

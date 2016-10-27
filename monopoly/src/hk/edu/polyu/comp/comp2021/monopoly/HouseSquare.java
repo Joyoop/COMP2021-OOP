@@ -1,29 +1,44 @@
 package hk.edu.polyu.comp.comp2021.monopoly;
 import java.util.Random;
+import java.util.Scanner;
 
 public class HouseSquare extends Square {
 	int price;
 	int owner = -1;
-	
+
 	public HouseSquare(String name, int price) {
 		super(name);
 		this.price = price;
 	}
-	
+
 	public void setOwner(int owner) {
 		this.owner = owner;
 	}
-	
+
 	public int getPrice() {
 		return price;
 	}
-	
+
 	@Override
 	public void doAction(Player player, Board board) {
 		if(owner < 0){
 			Util.print(player, player.getName() + ", do you want to buy " + getName() + "?");
-			Random rand = new Random();
-			if(rand.nextBoolean()){
+            Scanner scanner = new Scanner(System.in);
+            int input = 0;
+            Boolean input2;
+            if(!player.isBrokeOut()){
+                System.out.println("Would you want to buy it?");
+                System.out.println("1 for yes, 2 for no:");
+                input = scanner.nextInt();
+                scanner.close();
+            }
+
+            if(input == 1){
+                input2 = true;
+            }else{
+                input2 =  false;
+            }
+			if(input2){
 				Util.print(player, player.getName() + " buy " + getName() + " for " + price);
 				owner = player.getID();
 				player.getMoney().substractMoney(price);

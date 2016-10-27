@@ -5,18 +5,19 @@ public class Player {
 	int position = 0;
 	int id;
 	String name;
-	boolean brokeout = false;
+	private boolean brokeout = false;
+	boolean isAI = false;
 	Money money = new Money(5000);
-	
+
 	public Player(int id, String name) {
 		this.id = id;
 		this.name = name;
 	}
-	
+
 	public int getTotalWalk() {
 		return totalWalk;
 	}
-	
+
 	public int tossDie(Die die) {
 		int face = die.getFace();
 		Util.print(this, getName() + " toss a die... Face is " + face);
@@ -46,7 +47,13 @@ public class Player {
 	public int getID() {
 		return id;
 	}
-	
+	public boolean getAI(){
+		return isAI;
+	}
+
+	public void setAI(boolean x){
+		this.isAI = x;
+	}
 	public void setBrokeOut(boolean brokeout) {
 		this.brokeout = brokeout;
 	}
