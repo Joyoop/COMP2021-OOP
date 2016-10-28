@@ -14,9 +14,9 @@ public class Monopoly {
 		Scanner scanner = new Scanner(System.in);
 		int firstInput = 0;
 		while(firstInput != 3) {
-			System.out.println("Enter 1 if You want to see the board map: ");
-			System.out.println("Enter 2 if You want to read the instructions: ");
-			System.out.println("Enter 3 if You want to start the game: ");
+			System.out.println("Enter 1 if You want to see the board map");
+			System.out.println("Enter 2 if You want to read the instructions");
+			System.out.print("Enter 3 if You want to start the game: ");
 			firstInput = scanner.nextInt();
 			if(firstInput == 1){
 				printBoard();
@@ -32,6 +32,7 @@ public class Monopoly {
 		while (totalPlayer < 2 || totalPlayer > 8){
 			System.out.print("Enter the Total Player You want to : ");
 			totalPlayer = scanner.nextInt();
+			scanner.close();
 		}
 
 		Monopoly game = new Monopoly(totalPlayer);
