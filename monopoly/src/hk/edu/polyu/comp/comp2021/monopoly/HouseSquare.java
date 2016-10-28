@@ -22,14 +22,10 @@ public class HouseSquare extends Square {
 
 	@Override
 	public void doAction(Player player, Board board) {
-		try{
-		System.in.read();}
-		catch(IOException E){
-
-		}
+		boolean input2 = PauseTest.userInput();
 		if(owner < 0){
 			Util.print(player, player.getName() + ", do you want to buy " + getName() + "?");
-			if(true){
+			if(input2){
 				Util.print(player, player.getName() + " buy " + getName() + " for " + price);
 				owner = player.getID();
 				player.getMoney().substractMoney(price);

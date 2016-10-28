@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PauseTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PauseTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/PauseTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
+            <state relative-caret-position="330">
+              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -76,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HouseSquare.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HouseSquare.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/HouseSquare.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+            <state relative-caret-position="330">
+              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#368#369#0" expanded="true" />
@@ -133,8 +133,8 @@
         <option value="$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/userInput.java" />
         <option value="$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/VacationSquare.java" />
         <option value="$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/Monopoly.java" />
-        <option value="$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/PauseTest.java" />
         <option value="$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/HouseSquare.java" />
+        <option value="$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/PauseTest.java" />
       </list>
     </option>
   </component>
@@ -809,7 +809,7 @@
       <workItem from="1476675224752" duration="746000" />
       <workItem from="1476676217701" duration="678000" />
       <workItem from="1477587514125" duration="3976000" />
-      <workItem from="1477653212197" duration="3679000" />
+      <workItem from="1477653212197" duration="4275000" />
     </task>
     <servers />
   </component>
@@ -843,10 +843,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13267000" />
+    <option name="totallyTimeSpent" value="13863000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="749" extended-state="0" />
+    <frame x="0" y="0" width="1280" height="749" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1279,14 +1279,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/PauseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/JailSquare.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1305,13 +1297,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/HouseSquare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        <state relative-caret-position="330">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#368#369#0" expanded="true" />
             <element signature="e#387#388#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hk/edu/polyu/comp/comp2021/monopoly/PauseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>

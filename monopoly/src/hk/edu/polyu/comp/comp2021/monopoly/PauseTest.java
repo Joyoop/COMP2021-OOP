@@ -21,7 +21,7 @@ public class PauseTest {
             input = scanner.nextInt(); // if there is another number
         else
             input = 0;
-        //input = scanner.nextInt();
+        String input3 = scanner.nextLine();
         scanner.close();
         if (input == 1) {
             input2 = true;
