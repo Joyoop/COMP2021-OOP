@@ -22,8 +22,6 @@ public class Monopoly {
 				printBoard();
 			}else if(firstInput == 2){
 				printInstruction();
-			}else if(firstInput == 3){
-				break;
 			}
 		}
 

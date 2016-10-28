@@ -19,25 +19,42 @@ public class HouseSquare extends Square {
 		return price;
 	}
 
+	public static boolean getInput(){
+		Scanner scanner = new Scanner(System.in);
+		int input = 0;
+		System.out.println("Would you want to buy it?: 1 for yes, 2 for no:");
+		if(scanner.hasNextInt())
+			input = scanner.nextInt(); // if there is another number
+		else
+			input = 0;
+		//input = scanner.nextInt();
+		scanner.close();
+		if(input == 1){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	@Override
 	public void doAction(Player player, Board board) {
+		Scanner scanner = new Scanner(System.in);
+		int input = 0;
+		boolean input2 = false;
+		System.out.println("Would you want to buy it?: 1 for yes, 2 for no:");
+		if(scanner.hasNextInt())
+			input = scanner.nextInt(); // if there is another number
+		else
+			input = 0;
+		//input = scanner.nextInt();
+		scanner.close();
+		if(input == 1){
+			input2 =  true;
+		}else{
+			input2 = false;
+		}
 		if(owner < 0){
 			Util.print(player, player.getName() + ", do you want to buy " + getName() + "?");
-            Scanner scanner = new Scanner(System.in);
-            int input = 0;
-            Boolean input2;
-            if(!player.isBrokeOut()){
-                System.out.println("Would you want to buy it?");
-                System.out.println("1 for yes, 2 for no:");
-                input = scanner.nextInt();
-                scanner.close();
-            }
-
-            if(input == 1){
-                input2 = true;
-            }else{
-                input2 =  false;
-            }
 			if(input2){
 				Util.print(player, player.getName() + " buy " + getName() + " for " + price);
 				owner = player.getID();
