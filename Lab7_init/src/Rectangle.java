@@ -2,6 +2,8 @@
  * Created by LX.Conan on 2016/10/30.
  */
 
+import javafx.scene.shape.RectangleBuilder;
+
 import java.lang.Math;
 
 public class Rectangle extends Shape {
@@ -16,8 +18,13 @@ public class Rectangle extends Shape {
     // Note: please represent the rectangle as [x y w h]
     // (x y) are the start coordinates of rectangle
     // (w h) are the width and height of rectangle, respectively
-    Rectangle(arg1, arg2, arg3, arg4) {
+    Rectangle(double arg1, double arg2, double arg3, double arg4) {
         // your code here
+        this.x = arg1;
+        this.y = arg2;
+        this.w = arg3;
+        this.h = arg4;
+
     }
 
     // do not modify
@@ -45,6 +52,14 @@ public class Rectangle extends Shape {
     // please change the type of paramValue from String to double
     public void setParam(int paramName, double paramValue) {
         // your code here (similar to above setParam)
+        switch(paramName)
+        {
+            case kParamX: this.x = paramValue; break;
+            case kParamY: this.y = paramValue; break;
+            case kParamW: this.w = paramValue; break;
+            case kParamH: this.h = paramValue; break;
+            default: System.out.println("error param name in Rectangle class"); return;
+        }
     }
 
     // override Shape.getParam
@@ -61,30 +76,40 @@ public class Rectangle extends Shape {
     }
 
     // override Shape.area
-    public sig area() {
+    public double area() {
         // your code here
+        return this.w*this.h;
     }
 
     // print [x y w h] information
     public void printShape() {
         // your code here
+        System.out.println("["+x+""+y+""+w+""+h+"]");
     }
 
     // print area value
     public void printArea() {
         // your code here
+        System.out.println("area value: "+this.area());
     }
 
     // multiple reference
     public Shape clone() {
         // your code here
+        return this;
     }
 
     // deep clone
     public Shape copy() {
         // your code here
+        double x1 = this.x;
+        double y1 = this.y;
+        double w1 = this.w;
+        double h1 = this.h;
+
+        return new Rectangle(x1,y1,w1,h1);
     }
 
     // choose one of three modifier
-    private/protected/public double x, y, w, h;
+    private double x, y, w, h;
 }
