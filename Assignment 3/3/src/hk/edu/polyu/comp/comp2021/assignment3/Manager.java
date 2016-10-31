@@ -1,5 +1,7 @@
 package hk.edu.polyu.comp.comp2021.assignment3;
 
+import com.sun.org.glassfish.gmbal.ParameterNames;
+
 /**
  * A manager in a company.
  */
@@ -15,8 +17,8 @@ public class Manager extends Employee{
      */
     public Manager(String name, SalaryLevel level, double bonusRate){
         // Task 5: add your code here.
-
-
+        super(name, level);
+        this.bonusRate = bonusRate;
     }
 
     // override method Employee.salary to calculate the salary of a manager.
@@ -26,13 +28,21 @@ public class Manager extends Employee{
     // is 2000 * 2 * (0.5 + 1) = 6000.
 
     // Task 6: add the overriding method here
+    @Override
 
+    public double salary(){
+        return super.BASE_SALARY*this.getSalaryLevel().getScale()*(1 + this.bonusRate);
+    }
 
 
     //            REQUIREMENT
     // The main method should print out the following two lines:
     //   Tom:2000.0
     //   Bob:6000.0
+    @ParameterNames
+    /**
+     * A manager in a company.
+     */
     public static void main(String[] args){
         Employee[] employees = new Employee[2];
         employees[0] = new Employee("Tom", SalaryLevel.ENTRY);

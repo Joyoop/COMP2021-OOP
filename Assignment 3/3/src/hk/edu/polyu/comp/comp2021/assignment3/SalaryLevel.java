@@ -8,10 +8,29 @@ package hk.edu.polyu.comp.comp2021.assignment3;
  * Levels of salary.
  */
 enum SalaryLevel {
-    ENTRY(1), JUNIOR(1.3), SENIOR(1.6), EXECUTIVE(2);
+
+    /**
+     * Entry level
+     */
+    ENTRY(1),
+    /**
+     * Junior level
+     */
+    JUNIOR(1.3),
+    /**
+     * Senior Level
+     */
+    SENIOR(1.6),
+    /**
+     * Executive Level
+     */
+    EXECUTIVE(2);
 
     // Task 1: add your code here
-
+    private double scale;
+    private SalaryLevel(double scale) {
+        this.scale = scale;
+    }
     
 
     /**
@@ -21,7 +40,18 @@ enum SalaryLevel {
      */
     public double getScale(){
         // Task 2: add your code here
-
+        switch(this){
+            case ENTRY:
+                return this.scale;
+            case JUNIOR:
+                return this.scale;
+            case SENIOR:
+                return this.scale;
+            case EXECUTIVE:
+                return this.scale;
+           // default: throw new InvalidArgumentException("invalid argument");
+        }
+        throw new IllegalArgumentException();
         
         
     }

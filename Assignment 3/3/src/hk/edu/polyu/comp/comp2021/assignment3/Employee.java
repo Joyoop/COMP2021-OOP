@@ -49,9 +49,8 @@ public class Employee{
      */
     public Employee(String name, SalaryLevel level){
         // Task 3: add your code here
-
-        
-        
+        this.name = name;
+        this.salaryLevel = level;
     }
 
     /**
@@ -65,6 +64,7 @@ public class Employee{
         // E.g., the salary of an employee at ENTRY level is 2000 * 1 = 2000.
 
         // Task 4: add your code here
+        return BASE_SALARY*this.salaryLevel.getScale();
         
         
         
