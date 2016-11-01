@@ -62,6 +62,7 @@ public class Monopoly {
 		}else{
 			System.out.println(board.getMaxMoneyPlayer().getName() + " is won by have most money!");
 		}
+		PauseTest.closeScanner();
 		System.out.println("Game over!");
 	}
 	

@@ -5,9 +5,14 @@ import java.util.Scanner;
 
 /**
  * Created by Isaac on 10/29/16.
+ * this class is used to figure out all user input problem
             */
     public class PauseTest {
     //Scanner scanner = new Scanner(System.in);
+
+    public static void triggerDie(){
+        
+    }
 
     public static int initInput(){
         Scanner scanner = new Scanner(System.in);
