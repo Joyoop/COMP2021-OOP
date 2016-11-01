@@ -1,5 +1,6 @@
 package hk.edu.polyu.comp.comp2021.monopoly;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -14,18 +15,22 @@ public class PauseTest {
 
     public static boolean userInput() {
         Scanner scanner = new Scanner(System.in);
-        String input;
+        int input = 3;
         boolean input2 = false;
         System.out.println("Would you want to buy it?: 1 for yes, 2 for no:");
-        if (scanner.hasNextLine())
-            input = scanner.nextLine(); // if there is another number
-        else
-            input = "";
-        String input3 = scanner.nextLine();
-        scanner.close();
+        do {
+            try {
+                input = Integer.parseInt(scanner.nextLine()); // if there is another number
+                break;
+            }catch(NoSuchElementException e){
+
+            }
+        }while(!scanner.hasNextLine());
+        //String input3 = scanner.nextLine();
+        //scanner.close();
         if (input == 1) {
             input2 = true;
-        } else {
+        } else if(input == 2) {
             input2 = false;
         }
         return input2;
