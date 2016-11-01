@@ -23,9 +23,10 @@ public class HouseSquare extends Square {
 	@Override
 	public void doAction(Player player, Board board) {
 		//if player.state = 0
-		boolean input2 = PauseTest.userInput();
-		if(owner < 0){
-			Util.print(player, player.getName() + ", do you want to buy " + getName() + "?");
+
+		if(owner < 0){;
+			Util.print(player, player.getName() + ", do you want to buy " + getName() + "? (1 for yes, 2 for no)");
+			boolean input2 = PauseTest.userInput();
 			if(input2){
 				Util.print(player, player.getName() + " buy " + getName() + " for " + price);
 				owner = player.getID();

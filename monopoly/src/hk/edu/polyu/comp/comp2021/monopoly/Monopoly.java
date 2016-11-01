@@ -17,7 +17,7 @@ public class Monopoly {
 			System.out.println("Enter 1 if You want to see the board map");
 			System.out.println("Enter 2 if You want to read the instructions");
 			System.out.println("Enter 3 if You want to start the game: ");
-			firstInput = Integer.parseInt(scanner.nextLine());
+			firstInput = PauseTest.initInput();
 
 			if(firstInput == 1){
 				printBoard();
@@ -30,7 +30,7 @@ public class Monopoly {
 
 		while (totalPlayer < 2 || totalPlayer > 8){
 			System.out.println("Enter the Total Player You want to : ");
-			totalPlayer =Integer.parseInt(scanner.nextLine());
+			totalPlayer = PauseTest.initInput();
 			//scanner.close();
 		}
 

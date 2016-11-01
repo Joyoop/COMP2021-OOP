@@ -5,27 +5,22 @@ import java.util.Scanner;
 
 /**
  * Created by Isaac on 10/29/16.
- */
-public class PauseTest {
-    public static void main(String args[]){
+            */
+    public class PauseTest {
+    //Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Press Any Key To Continue...");
-        new java.util.Scanner(System.in).nextLine();
+    public static int initInput(){
+        Scanner scanner = new Scanner(System.in);
+        int input = 3;
+        input = Integer.parseInt(scanner.nextLine());
+        return input;
     }
 
     public static boolean userInput() {
         Scanner scanner = new Scanner(System.in);
         int input = 3;
         boolean input2 = false;
-        System.out.println("Would you want to buy it?: 1 for yes, 2 for no:");
-        do {
-            try {
-                input = Integer.parseInt(scanner.nextLine()); // if there is another number
-                break;
-            }catch(NoSuchElementException e){
-
-            }
-        }while(!scanner.hasNextLine());
+        input = Integer.parseInt(scanner.nextLine());
         //String input3 = scanner.nextLine();
         //scanner.close();
         if (input == 1) {
@@ -34,5 +29,10 @@ public class PauseTest {
             input2 = false;
         }
         return input2;
+    }
+
+    public static void closeScanner(){
+        Scanner scanner = new Scanner(System.in);
+        scanner.close();
     }
 }
