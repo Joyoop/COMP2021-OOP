@@ -8,12 +8,17 @@ public class Board {
 	Square[] squares = new Square[40];
 	String[] names = new String[] { "House", "Villa", "Town", "City", "Peace", "Village", "Jade", "Soi 4", "White", "Dark" };
 	
-	public Board(int totalPlayer) {
+	public Board(int totalPlayer, int[] AI) {
 		players = new Player[totalPlayer];
 		this.totalPlayer = totalPlayer;
 		for(int i = 0;i < players.length;i++){
 			players[i] = new Player(i, "Player " + (i + 1));
 		}
+		System.out.println(AI);
+		for(int j = 0; j < AI.length ; j++){
+			players[AI[j]-1].setAI(true);
+		}
+
 		Random rand = new Random();
 		for(int i = 0;i < squares.length;i++){
 			if(i == 0){
@@ -68,7 +73,12 @@ public class Board {
 		}
 		return ingame <= 1;
 	}
-	
+	public boolean hasDraw(Player player){
+		if(player.totalWalk == 100){
+			return true;
+		}
+		return false;
+	}
 	public Player getWinner() {
 		if(!hasWinner()){ return null; }
 		for(Player player:players){

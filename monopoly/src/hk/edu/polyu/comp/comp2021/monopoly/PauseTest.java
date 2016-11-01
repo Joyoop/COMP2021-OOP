@@ -11,19 +11,34 @@ import java.util.Scanner;
     //Scanner scanner = new Scanner(System.in);
 
     public static void triggerDie(){
-        
+        System.out.printf("Press RETURN To tose a die...");
+        new java.util.Scanner(System.in).nextLine();
     }
 
     public static int initInput(){
         Scanner scanner = new Scanner(System.in);
-        int input = 3;
-        input = Integer.parseInt(scanner.nextLine());
+        int input  = Integer.parseInt(scanner.nextLine());
         return input;
+    }
+
+    public static int[] aiInput(){
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        String[] items = input.split(",");
+        int[] result = new int[items.length];
+        for (int i = 0; i < items.length; i++) {
+            try {
+                result[i] = Integer.parseInt(items[i]);
+            } catch (NumberFormatException nfe) {
+                //NOTE: write something here if you need to recover from formatting errors
+            };
+        }
+        return result;
     }
 
     public static boolean userInput() {
         Scanner scanner = new Scanner(System.in);
-        int input = 3;
+        int input;
         boolean input2 = false;
         input = Integer.parseInt(scanner.nextLine());
         //String input3 = scanner.nextLine();

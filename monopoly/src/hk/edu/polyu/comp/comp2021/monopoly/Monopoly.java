@@ -6,8 +6,8 @@ public class Monopoly {
 	Die die = new Die();
 	Board board;
 	
-	public Monopoly(int totalPlayer) {
-		board = new Board(totalPlayer);
+	public Monopoly(int totalPlayer, int[] aiList) {
+		board = new Board(totalPlayer, aiList);
 	}
 	
 	public static void main(String[] args) {
@@ -29,12 +29,15 @@ public class Monopoly {
 		int totalPlayer = 0;
 
 		while (totalPlayer < 2 || totalPlayer > 8){
-			System.out.println("Enter the Total Player You want to : ");
+			System.out.println("Enter the Total Player You want: ");
 			totalPlayer = PauseTest.initInput();
 			//scanner.close();
 		}
 
-		Monopoly game = new Monopoly(totalPlayer);
+
+		System.out.println("Enter the No. of AI player you want : ");
+		int[] aiPlayer = PauseTest.aiInput();
+		Monopoly game = new Monopoly(totalPlayer, aiPlayer);
 		game.startGame();
 	}
 
@@ -51,6 +54,8 @@ public class Monopoly {
 		System.out.println("========");
 		while (!isGameEnd() && !board.hasWinner()){
 			if(!board.getCurrentPlayer().isBrokeOut()){
+				//PauseTest.triggerDie();
+
 				int face = board.getCurrentPlayer().tossDie(die);
 				board.movePlayer(board.getCurrentPlayer(), face);
 			}
@@ -68,7 +73,7 @@ public class Monopoly {
 	
 	public boolean isGameEnd() {
 		for(Player player:board.getPlayers()){
-			if(player.getTotalWalk() < 20){ return false; }
+			if(player.getTotalWalk() < 100){ return false; }
 		}
 		return true;
 	}
