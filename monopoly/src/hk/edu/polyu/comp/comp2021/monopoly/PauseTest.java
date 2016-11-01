@@ -14,14 +14,14 @@ public class PauseTest {
 
     public static boolean userInput() {
         Scanner scanner = new Scanner(System.in);
-        int input = 0;
+        String input;
         boolean input2 = false;
         System.out.println("Would you want to buy it?: 1 for yes, 2 for no:");
-        if (scanner.hasNextInt())
-            input = scanner.nextInt(); // if there is another number
+        if (scanner.hasNextLine())
+            input = scanner.nextLine(); // if there is another number
         else
-            input = 0;
-        //String input3 = scanner.nextLine();
+            input = "";
+        String input3 = scanner.nextLine();
         scanner.close();
         if (input == 1) {
             input2 = true;

@@ -28,7 +28,7 @@ enum SalaryLevel {
 
     // Task 1: add your code here
     private double scale;
-    private SalaryLevel(double scale) {
+    SalaryLevel(double scale) {
         this.scale = scale;
     }
     
@@ -40,7 +40,7 @@ enum SalaryLevel {
      */
     public double getScale(){
         // Task 2: add your code here
-        switch(this){
+        /*switch(this){
             case ENTRY:
                 return this.scale;
             case JUNIOR:
@@ -51,7 +51,8 @@ enum SalaryLevel {
                 return this.scale;
            // default: throw new InvalidArgumentException("invalid argument");
         }
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException();*/
+        return this.scale;
         
         
     }

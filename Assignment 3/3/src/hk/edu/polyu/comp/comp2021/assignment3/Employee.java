@@ -65,9 +65,6 @@ public class Employee{
 
         // Task 4: add your code here
         return BASE_SALARY*this.salaryLevel.getScale();
-        
-        
-        
     }
 
     /**

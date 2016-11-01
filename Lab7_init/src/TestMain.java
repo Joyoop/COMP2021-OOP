@@ -5,7 +5,7 @@
 public class TestMain {
     // in this TestMain file, your should check all your code implementation
     public static void main(String[] args) {
-        // your code her
+        /*
         Rectangle r1 = new Rectangle(1,1,2,2);
         Circle c1 = new Circle(3);
         System.out.println(r1.getParam(0));
@@ -35,5 +35,32 @@ public class TestMain {
 
         Rectangle r4 = new Rectangle(1,1,1,1);
         r4.setParam(1,0.5);
+        */
+        Hero hero;
+        Warrior warrior;
+        Healer healer;
+
+        //task1
+        //warrior = new Warrior("Thor");
+        //warrior.levelUp();
+
+        //task2
+        //hero = new Hero("Althea");
+        //hero.levelUp();
+
+        //warrior = new Warrior("Thor");
+        //healer = new Healer("Althea");
+        //warrior.doAction(healer);
+
+        //warrior = new Healer("Diana");
+        //warrior.levelUp();
+        //hero = new Warrior("Thor");
+        //hero.doAction(hero);
+        //hero = new Healer("Althea");
+        //hero.doAction(hero);
+
+        hero = new Warrior("Thor");
+        warrior = hero;
+        warrior.doAction(hero);
     }
 }
