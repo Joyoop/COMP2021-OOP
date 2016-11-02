@@ -5,3 +5,12 @@ Yuanjing Shi
 
 Task 1:
     Compile!
+    Result: "Thor is now a level 2 warrior."
+
+Task 2:
+    Doesn't compile!
+    Reason: Hero is a abstract class, which cannot be initialized.
+
+Task 3:
+    Compile!
+    Result: "Thor attacks Althea. Does 5 damage."
