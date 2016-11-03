@@ -8,9 +8,27 @@ Task 1:
     Result: "Thor is now a level 2 warrior."
 
 Task 2:
-    Doesn't compile!
-    Reason: Hero is a abstract class, which cannot be initialized.
+    Doesn't Compile!
+    Reason: Hero is a abstract class, which cannot be instantiated.
 
 Task 3:
     Compile!
     Result: "Thor attacks Althea. Does 5 damage."
+
+Task 4:
+    Doesn't Compile!
+    Reason: Healer and Warrior class are both subclass of abstract class Hero.
+            Hence the type of these two would be different and incompatible.
+            Therefore warrior object cannot be instantiated as Healer in this case.
+
+Task 5:
+    Compile!
+    Result: "Thor attacks Thor. Does 5 damage."
+            "Althea heals Althea by 0 points."
+
+Task 6:
+    Doesn't Compile!
+    Reason: Warrior is a subclass of abstract class hero, which means hero
+    could copy a warrior object but warrior could not copy a superclass object.
+    The other way to say it is the two references, warrior and hero, get
+    different static types, which are incompatible.
