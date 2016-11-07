@@ -8,9 +8,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.Buffer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
@@ -31,20 +28,24 @@ class EgWindow extends JFrame
     public EgWindow()
     {
         setTitle("Example1");
-        setSize(400,300);
+        setSize(2000,1500);
         Container MyContentFrame = getContentPane();
-        BufferedImage myImage = null;
+        BufferedImage myImage;
+        String filePath = "image/monopoly.png";
         try {
-            myImage = ImageIO.read(new File(monopoly.png));
+            myImage = ImageIO.read(new File(filePath));
+            ImageIcon monopoly = new ImageIcon(myImage);
+            JLabel label1 = new JLabel(monopoly, JLabel.CENTER);
+            MyContentFrame.add(label1);
         } catch (IOException ex) {
             // handle exception...
+            ex.printStackTrace();
         }
         //BufferedImage myPicture = ImageIO.read(new File("monopoly.png"));
-        ImageIcon monopoly = new ImageIcon(myImage);
-        JLabel label1 = new JLabel(monopoly, JLabel.CENTER);
+
         //JLabel NiceDay=new JLabel(" Have a nice day!");
         //MyContentFrame.add(NiceDay);
-        MyContentFrame.add(label1);
+
 
         /*public ImageIcon createImageIcon(String path, String description) {
             java.net.URL imgURL = getClass().getResource(path);
