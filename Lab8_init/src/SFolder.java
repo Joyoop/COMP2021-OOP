@@ -32,14 +32,17 @@ public class SFolder {
 
     public int getFolderSize() {
         // your code here
+        return this.folders.size();
     }
 
     public String getFolderName() {
         // your code here
+        return this.folderName;
     }
 
-    public sig getDocument(int documentIndex) {
+    public SDocument getDocument(int documentIndex) {
         // your code here
+        return this.folders.get(documentIndex);
     }
 
     public void copyTo(SFolder rhs) {
@@ -60,6 +63,6 @@ public class SFolder {
         // your code here
     }
 
-    private/protected/public String folderName;
-    private/protected/public Vector<SDocument> folders;
+    private String folderName;
+    private Vector<SDocument> folders;
 }
