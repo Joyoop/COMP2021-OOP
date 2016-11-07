@@ -36,11 +36,11 @@ public class SDocument {
         // your code here
     }
 
-    public sig getDocumentName() {
+    public String getDocumentName() {
         // your code here
     }
 
-    public sig getFile(int fileIndex) {
+    public SFile getFile(int fileIndex) {
         // your code here
     }
 
@@ -62,6 +62,6 @@ public class SDocument {
         // your code here
     }
 
-    private/protected/public String documentName;
-    private/protected/public Vector<SFile> files;
+    private String documentName;
+    private Vector<SFile> files;
 }
