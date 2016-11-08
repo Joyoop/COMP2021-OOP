@@ -6,7 +6,7 @@ public class Board {
 	int totalPlayer = 0;
 	Player[] players;
 	Square[] squares = new Square[40];
-	String[] names = new String[] { "House", "Villa", "Town", "City", "Peace", "Village", "Jade", "Soi 4", "White", "Dark" };
+	String[] names = new String[] { "House", "Ho man Tin", "Town", "City", "Peace", "Village", "Jade", "Soi 4", "White", "Dark" };
 	
 	public Board(int totalPlayer, int[] AI) {
 		players = new Player[totalPlayer];
