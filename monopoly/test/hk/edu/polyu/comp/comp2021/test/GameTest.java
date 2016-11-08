@@ -1,6 +1,6 @@
 package hk.edu.polyu.comp.comp2021.test;
 
-import hk.edu.polyu.comp.comp2021.monopoly.Game;
+/*import hk.edu.polyu.comp.comp2021.monopoly.Game;
 import hk.edu.polyu.comp.comp2021.monopoly.Monopoly;
 import org.junit.Test;
 
@@ -18,4 +18,4 @@ public class GameTest {
         Monopoly.main(null);
     }
 
-}
+}*/
