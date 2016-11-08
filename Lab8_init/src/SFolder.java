@@ -9,10 +9,10 @@ public class SFolder {
         folders = new Vector<SDocument>(0);
     }
 
-    SFolder(Vector<SDocument> document, String name) {
+    SFolder(SDocument document, String name) {
         // your code here
         this.folderName = name;
-        this.folders = document;
+        this.folders.add(document);
     }
 
 
@@ -52,7 +52,11 @@ public class SFolder {
 
     public void copyTo(SFolder rhs) {
         // your code here
-        rhs = new SFolder(this.folders,this.folderName);
+        rhs = new SFolder();
+        rhs.setFolderName(this.folderName);
+        for(int i = 0; i < this.folders.size(); i++) {
+            rhs.folders.add(this.folders.get(i));
+        }
     }
 
     // put your own comments here

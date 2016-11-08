@@ -13,9 +13,9 @@ public class SFile {
     }
 
     // create your own constructor
-    SFile(String filename, Vector<String> contents) {
+    SFile(String filename, String contents) {
         this.filename = filename;
-        this.contents = contents;
+        this.contents.add(contents);
     }
 
     /**
@@ -81,7 +81,10 @@ public class SFile {
 
     public void copyTo(SFile rhs) {
         // your code here
-        rhs = new SFile(this.filename,this.contents);
+        rhs.filename = this.filename;
+        for(int i = 0; i < this.contents.size(); i++) {
+            rhs.contents.add(this.contents.get(i));
+        }
     }
 
     // put your own comments here

@@ -11,10 +11,10 @@ public class SDocument {
         files = new Vector<SFile>(0);
     }
 
-    SDocument(Vector<SFile> file, String filename) {
+    SDocument(SFile file, String filename) {
         // your code here
         this.documentName = filename;
-        this.files = file;
+        this.files.add(file);
     }
 
 
@@ -55,7 +55,11 @@ public class SDocument {
 
     public void copyTo(SDocument rhs) {
         // your code here
-        rhs = new SDocument(this.files,this.documentName);
+        rhs = new SDocument();
+        rhs.documentName = this.documentName;
+        for(int i = 0; i < this.files.size(); i++) {
+            rhs.files.add(this.files.get(i));
+        }
     }
 
     // put your own comments here
