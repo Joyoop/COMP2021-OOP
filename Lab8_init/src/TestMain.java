@@ -34,22 +34,20 @@ class EgWindow extends JFrame
         BufferedImage myImage = null;
         String filePath = "image/monopoly.png";
         try {
+            //board image load and resize
             myImage = ImageIO.read(new File(filePath));
-
             Image myImage2 = myImage.getScaledInstance(400, 400,Image.SCALE_SMOOTH);
-
             ImageIcon monopoly = new ImageIcon(myImage2);
-
-            ImageIcon piece1 = new ImageIcon(ImageIO.read(new File("image/piece3.png")));
             JLabel label1 = new JLabel(monopoly);
-            JLabel label2 = new JLabel(piece1);
-            label1.setSize(200,200);
+            //piece1 image load and resize
 
+            BufferedImage piece1 = ImageIO.read(new File("image/piece3.png"));
+            Image piece1Image = piece1.getScaledInstance(90,90,Image.SCALE_SMOOTH);
+            ImageIcon piece1Icon = new ImageIcon(piece1Image);
+            JLabel label2 = new JLabel(piece1Icon);
 
-
-
-
-
+            label2.setBounds(20,20,90,90);
+            label1.add(label2);
 
             String[] test = {"[Turn 1] [0] [$5000] Player 1 toss a die... Face is 6",
                     "[Turn 1] [6] [$5000] Player 1 goes to Jade Soi 4",
@@ -61,7 +59,7 @@ class EgWindow extends JFrame
             MyContentFrame.setLayout(null);
             MyContentFrame.add(label1);
             MyContentFrame.add(new JList(test));
-            MyContentFrame.add(label2);
+            //MyContentFrame.add(label2);
 
         } catch (IOException ex) {
             // handle exception...
