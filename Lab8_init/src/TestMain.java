@@ -31,25 +31,38 @@ class EgWindow extends JFrame
         setTitle("Example1");
         setSize(2000,1500);
         Container MyContentFrame = getContentPane();
-        BufferedImage myImage;
+        BufferedImage myImage = null;
         String filePath = "image/monopoly.png";
         try {
             myImage = ImageIO.read(new File(filePath));
-            ImageIcon monopoly = new ImageIcon(myImage);
+
+            Image myImage2 = myImage.getScaledInstance(400, 400,Image.SCALE_SMOOTH);
+
+            ImageIcon monopoly = new ImageIcon(myImage2);
+
+            ImageIcon piece1 = new ImageIcon(ImageIO.read(new File("image/piece3.png")));
             JLabel label1 = new JLabel(monopoly);
-            JLabel label2 = new JLabel("Enter 1 if You want to see the board map");
+            JLabel label2 = new JLabel(piece1);
+            label1.setSize(200,200);
+
+
+
+
+
+
+
             String[] test = {"[Turn 1] [0] [$5000] Player 1 toss a die... Face is 6",
                     "[Turn 1] [6] [$5000] Player 1 goes to Jade Soi 4",
                     "[Turn 1] [6] [$5000] Player 1 buy Jade Soi 4 for 638",
                     "[Turn 1] [0] [$5000] Player 2 toss a die... Face is 4",
                     "[Turn 1] [4] [$5000] Player 2 goes to Village Peace",
 "[Turn 1] [4] [$5000] Player 2, do you want to buy Village Peace? (1 for yes, 2 for no)"};
-            JPanel panel1 = new DrawPane();
+            JPanel backgroundPanel = new JPanel();
             MyContentFrame.setLayout(null);
             MyContentFrame.add(label1);
-
             MyContentFrame.add(new JList(test));
-            MyContentFrame.add(panel1);
+            MyContentFrame.add(label2);
+
         } catch (IOException ex) {
             // handle exception...
             ex.printStackTrace();
@@ -79,7 +92,7 @@ class EgWindow extends JFrame
 }
 
 class DrawPane extends JPanel{
-    public void paintComponent(Graphics g){
+    public void paint(Graphics g){
         //draw on g here e.g.
         g.fillRect(20, 20, 100, 200);
     }
