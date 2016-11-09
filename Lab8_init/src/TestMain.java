@@ -44,29 +44,17 @@ class EgWindow extends JFrame
                     "[Turn 1] [0] [$5000] Player 2 toss a die... Face is 4",
                     "[Turn 1] [4] [$5000] Player 2 goes to Village Peace",
 "[Turn 1] [4] [$5000] Player 2, do you want to buy Village Peace? (1 for yes, 2 for no)"};
-            //MyContentFrame.setLayout(new BorderLayout());
+            JPanel panel1 = new DrawPane();
+            MyContentFrame.setLayout(null);
             MyContentFrame.add(label1);
-            //MyContentFrame.add(label2);
+
             MyContentFrame.add(new JList(test));
+            MyContentFrame.add(panel1);
         } catch (IOException ex) {
             // handle exception...
             ex.printStackTrace();
         }
-        //BufferedImage myPicture = ImageIO.read(new File("monopoly.png"));
 
-        //JLabel NiceDay=new JLabel(" Have a nice day!");
-        //MyContentFrame.add(NiceDay);
-
-
-        /*public ImageIcon createImageIcon(String path, String description) {
-            java.net.URL imgURL = getClass().getResource(path);
-            if (imgURL != null) {
-                return new ImageIcon(imgURL, description);
-            } else {
-                System.err.println("Couldn't find file: " + path);
-                return null;
-            }
-        }*/
 //
 //* An inner class is defined as the window Listener
 //* It is only interested in the windowClosing event,
@@ -79,24 +67,20 @@ class EgWindow extends JFrame
             } // Terminate the program
         });
     }
+
+    /*public void paint(Graphics g) {
+
+        g.setColor(Color.red);
+        g.fillOval(20, 50, 100, 100);
+        g.setColor(Color.blue);
+        g.fillRect(100, 100, 100, 200);
+    }*/
+
 }
 
-class ImagePanel extends JPanel{
-
-    private BufferedImage image;
-
-    public ImagePanel() {
-        try {
-            image = ImageIO.read(new File("monopoly.png"));
-        } catch (IOException ex) {
-            // handle exception...
-        }
+class DrawPane extends JPanel{
+    public void paintComponent(Graphics g){
+        //draw on g here e.g.
+        g.fillRect(20, 20, 100, 200);
     }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters
-    }
-
 }
