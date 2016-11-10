@@ -1,0 +1,37 @@
+1. "Variable v1 = new Variable(“a“);
+    Build a new Class called "Variable" and its constructor
+    takes one String instance as its name.
+
+2. Expr b4 = new BinaryExpr(b2, v1, BinaryOp.DIVIDE);
+    Build a new abstract class called "Expr" and make
+    both "BinaryExpr" and "Literal" class extending it.
+    Also make "Variable" class extend "Literal" class
+    so that it could be token as an instance for
+    "BinaryExpr" constructor.
+
+3. Environment env = new Environment();
+    Build a new class called "Environment".
+
+4. env.addVariable(“a“, 2.0);
+    Add a method in "Environment" class which
+    takes two parameters, String "Name" and
+    double "Value", while returning "value".
+
+5. System.out.println(b4.evaluate());
+    Add a abstract method "evaluate" which takes
+    no parameters and throw RunTimeException
+
+6. System.out.println(b4.evaluate(env));
+    Add a abstract medthod "evaluate" which takes
+    one parameter "env" whose type is "Environment".
+
+    Override this method in class "Literal" which
+    does nothing.
+
+    Override this method in class "BinaryExpr"
+    which build a new BinaryExpr object taking
+    the original first and last parameter but
+    retrieves only double value from "Variable"
+    parameter as its second parameter. Return the
+    evaluate() result of this new "BinaryExpr"
+    Object.
