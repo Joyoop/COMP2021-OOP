@@ -25,6 +25,12 @@ public class BinaryExpr extends Literal{
     }
 
     @Override
+    public double evaluate(Environment env){
+        BinaryExpr copyExpr = new BinaryExpr(a,env.getVar(), BinaryOp);
+        return copyExpr.evaluate();
+    }
+
+    //Overload
     public double evaluate(){
         double a1 = 0;
         double b1 = 0;

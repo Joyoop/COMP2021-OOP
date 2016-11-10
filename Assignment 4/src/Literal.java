@@ -12,6 +12,11 @@ public class Literal extends Expr{
         this.a = a;
     }
 
+    @Override
+    public double evaluate(Environment env){
+        return a;
+    }
+    //Overload
     public double evaluate(){
         return a;
     }

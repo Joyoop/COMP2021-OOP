@@ -60,8 +60,7 @@ public class TestMain {
 
         hero.doAction(hero);
 
-        //hero = new Warrior("Thor");
-        //warrior = hero;
+        //Warrior = new Hero("Thor");
         //warrior.doAction(hero);
     }
 }
