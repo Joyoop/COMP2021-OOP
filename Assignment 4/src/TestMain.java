@@ -12,6 +12,7 @@ public class TestMain {
         System.out.println(l2.evaluate()); // print out: 3.0
         BinaryExpr b1 = new BinaryExpr(l2, l1, BinaryOp.DIVIDE);
         System.out.println(b1); // print out: 3.0 / 1.0
+        System.out.println(b1.evaluate());//print out: 3.0
         BinaryExpr b2 = new BinaryExpr(b1, l3, BinaryOp.ADD);
         System.out.println(b2); // print out: (3.0 / 1.0) + 5.0
         System.out.println(b2.evaluate()); // print out: 8.0

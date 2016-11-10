@@ -12,8 +12,8 @@ public class Literal {
         this.a = a;
     }
 
-    public Literal evaluate(){
-        return this;
+    public double evaluate(){
+        return a;
     }
 
     public String toString(){
