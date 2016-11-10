@@ -13,21 +13,15 @@ public class BinaryExpr extends Literal{
         this.BinaryOp = BinaryOp;
     }
 
-    /*BinaryExpr(BinaryExpr b1, BinaryExpr b2, BinaryOp BinaryOp){
-        this.a = b1;
-        this.b = b2;
-        this.BinaryOp = BinaryOp;
-    }*/
-
     public String toString(){
-        if(a.getClass().equals(Literal.class) && b.getClass().equals(Literal.class))
-            return a + " " + BinaryOp.getScale() + " " + b;
+        if(a.getClass().equals(BinaryExpr.class) && b.getClass().equals(BinaryExpr.class))
+            return "(" + a + ") " + BinaryOp.getScale()+ " (" + b +")";
         else if(a.getClass().equals(BinaryExpr.class) && b.getClass().equals(Literal.class))
             return "(" + a + ") " + BinaryOp.getScale() + " " + b;
         else if(a.getClass().equals(Literal.class) && b.getClass().equals(BinaryExpr.class))
             return a + " " + BinaryOp.getScale() + " (" + b +")";
         else
-            return "(" + a + ") " + BinaryOp.getScale()+ " (" + b +")";
+            return a + " " + BinaryOp.getScale() + " " + b;
     }
 
     @Override

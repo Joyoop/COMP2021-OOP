@@ -1,7 +1,7 @@
 /**
  * Created by Isaac on 11/10/16.
  */
-public class Literal {
+public class Literal extends Expr{
     private double a;
 
     Literal(){
