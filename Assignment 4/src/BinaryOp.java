@@ -1,30 +1,25 @@
 /**
  * Created by Isaac on 11/10/16.
  */
-enum BinaryOp{
+public enum BinaryOp{
 
     /**
      * Entry level
      */
-    DIVIDE(1),
+    DIVIDE,
     /**
      * Junior level
      */
-    MULTIPLY(2),
+    MULTIPLY,
     /**
      * Senior Level
      */
-    ADD(3),
+    ADD,
     /**
      * Executive Level
      */
-    MINUS(4);
+    MINUS;
 
-    // Task 1: add your code here
-    private double scale;
-    BinaryOp(double scale) {
-        this.scale = scale;
-    }
 
 
     /**
@@ -32,20 +27,20 @@ enum BinaryOp{
      *
      * @return Scale of the salary level.
      */
-            public double getScale(){
+            public String getScale(){
                 // Task 2: add your code here
                 switch(this){
                     case DIVIDE:
-                        return this.scale;
+                        return "/";
                     case MULTIPLY:
-                        return this.scale;
+                        return "*";
                     case ADD:
-                        return this.scale;
+                        return "+";
                     case MINUS:
-                        return this.scale;
+                        return "-";
                     //default: throw new InvalidArgumentException("invalid argument");
                 }
-                return this.scale;
+                return null;
 
 
     }

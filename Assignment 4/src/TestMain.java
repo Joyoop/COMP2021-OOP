@@ -17,14 +17,14 @@ public class TestMain {
         System.out.println(b2.evaluate()); // print out: 8.0
         BinaryExpr b3 = new BinaryExpr(b1, b2, BinaryOp.MULTIPLY);
         System.out.println(b3.evaluate()); // print out: 24.0
-
+/*
         //Task 2
         Variable v1 = new Variable("a"); // Each variable has a single character as its name
         Expr b4 = new BinaryExpr(b2, v1, BinaryOp.DIVIDE);
         System.out.println(b4); // print out: ((3.0 / 1.0) + 5.0) / a
         Environment env = new Environment();
-        env.addVariable(“a“, 2.0); // variable “a“ has value 2.0 in env
+        env.addVariable("a", 2.0); // variable “a“ has value 2.0 in env
         System.out.println(b4.evaluate()); // throws RuntimeException
-        System.out.println(b4.evaluate(env)); // print out: 4.0
+        System.out.println(b4.evaluate(env)); // print out: 4.0*/
     }
 }

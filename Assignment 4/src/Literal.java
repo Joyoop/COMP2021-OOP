@@ -3,11 +3,20 @@
  */
 public class Literal {
     private double a;
+
+    Literal(){
+        this.a = 0;
+    }
+
     Literal(double a){
         this.a = a;
     }
 
-    public double evaluate(){
-        return a;
+    public Literal evaluate(){
+        return this;
+    }
+
+    public String toString(){
+        return a + "";
     }
 }
