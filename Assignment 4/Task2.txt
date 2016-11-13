@@ -4,13 +4,14 @@
 
 2. Expr b4 = new BinaryExpr(b2, v1, BinaryOp.DIVIDE);
     Build a new abstract class called "Expr" and make
-    both "BinaryExpr" and "Literal" class extending it.
-    Also make "Variable" class extend "Literal" class
-    so that it could be token as an instance for
-    "BinaryExpr" constructor.
+    "Literal" class extending it, which makes “BinaryExpr” 
+    extend it implicitly. Also make "Variable" class 
+    extend "Literal" class so that it could be token
+    as an instance for constructor of "BinaryExpr" class.
 
 3. Environment env = new Environment();
-    Build a new class called "Environment".
+    Build a new class called "Environment" with two instance:
+    one string and the other one double.
 
 4. env.addVariable(“a“, 2.0);
     Add a method in "Environment" class which
@@ -31,7 +32,51 @@
     Override this method in class "BinaryExpr"
     which build a new BinaryExpr object taking
     the original first and last parameter but
-    retrieves only double value from "Variable"
+    retrieves only the double value from "Variable"
     parameter as its second parameter. Return the
     evaluate() result of this new "BinaryExpr"
     Object.
+
+Summary:
+
+	New class - “Variable” 
+		1. String instance - name
+
+		2. Constructor - Variable(String name)
+			To initialize the name
+
+		3. public String method - toString
+			To provide valid string output for 
+			print purpose
+		
+	New class - “Environment”
+		1. String instance - a
+		2. double instance - b
+
+		3. public void method - addVariable(String a, double b)
+			To initialize the two instance
+
+		4. public Literal method - getVar()
+			Return a new Literal object(b)
+	New abstract class - “Expr”
+		1. default constructor - Expr()
+			For polymorphism purpose 
+		
+		2. public abstract method - evaluate(Environment env)
+			For polymorphism purpose 
+
+		3. public abstract method - evaluate()
+			For polymorphism purpose and throw RunTimeException
+
+	Existing class - Literal
+		1. Override public double method - evaluate(Environment env) 
+			To return double value of this literal object
+
+	Existing class - BinaryExpr
+		1. Override public double method - evaluate(Environment env)
+			To retrieve the double value of this Environment variable
+			and use it as the second parameter with its original
+			first and last parameter of this BinaryExpr object to 
+			create a new BinaryExpr object and return its.evaluate()
+			result 
+

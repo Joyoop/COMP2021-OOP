@@ -16,7 +16,8 @@ public class Literal extends Expr{
     public double evaluate(Environment env){
         return a;
     }
-    //Overload
+
+    @Override
     public double evaluate(){
         return a;
     }

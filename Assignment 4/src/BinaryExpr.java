@@ -21,7 +21,7 @@ public class BinaryExpr extends Literal{
         else if(a.getClass().equals(Literal.class) && b.getClass().equals(BinaryExpr.class))
             return a + " " + BinaryOp.getScale() + " (" + b +")";
         else
-            return a + " " + BinaryOp.getScale() + " " + b;
+            return  a + " " + BinaryOp.getScale() + " " + b;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class BinaryExpr extends Literal{
         return copyExpr.evaluate();
     }
 
-    //Overload
+    @Override
     public double evaluate(){
         double a1 = 0;
         double b1 = 0;

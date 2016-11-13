@@ -25,7 +25,6 @@ public class TestMain {
         System.out.println(b4); // print out: ((3.0 / 1.0) + 5.0) / a
         Environment env = new Environment();
         env.addVariable("a", 2.0); // variable “a“ has value 2.0 in env
-        //System.out.println(env.getVar());
         System.out.println(b4.evaluate()); // throws RuntimeException
         System.out.println(b4.evaluate(env)); // print out: 4.0
     }
