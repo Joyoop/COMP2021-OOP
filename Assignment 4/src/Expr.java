@@ -3,7 +3,7 @@
  */
 public abstract class Expr {
     private BinaryOp BinaryOp;
-    public Literal a;
+    private Literal a;
     private Literal b;
 
     Expr(){

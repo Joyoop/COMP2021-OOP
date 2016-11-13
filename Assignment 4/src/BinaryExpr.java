@@ -26,7 +26,7 @@ public class BinaryExpr extends Literal{
 
     @Override
     public double evaluate(Environment env){
-        BinaryExpr copyExpr = new BinaryExpr(a,env.getVar(), BinaryOp);
+        BinaryExpr copyExpr = new BinaryExpr(a, env.getVar(), BinaryOp);
         return copyExpr.evaluate();
     }
 
@@ -58,8 +58,10 @@ public class BinaryExpr extends Literal{
             return x + y;
         }else if(BinaryOp.getScale() == "-"){
             return x - y;
-        }else{
+        }else if(BinaryOp.getScale() == "/"){
             return x / y;
+        }else{
+            throw new IllegalArgumentException("invalid argument");
         }
     }
 

@@ -4,19 +4,19 @@
 public enum BinaryOp{
 
     /**
-     * Entry level
+     * Divide
      */
     DIVIDE,
     /**
-     * Junior level
+     * Multiply
      */
     MULTIPLY,
     /**
-     * Senior Level
+     * Add
      */
     ADD,
     /**
-     * Executive Level
+     * Minus
      */
     MINUS;
 
@@ -38,9 +38,9 @@ public enum BinaryOp{
                         return "+";
                     case MINUS:
                         return "-";
-                    //default: throw new InvalidArgumentException("invalid argument");
+                    default: throw new IllegalArgumentException("invalid argument");
                 }
-                return null;
+                //return null;
 
 
     }
