@@ -11,10 +11,12 @@ import java.util.*;
 
 public class StreamBuffer {
 
-    modifier List<String> messages = new LinkedList<String>();
+    private List<String> messages = new LinkedList<String>();
+    //private final int maxSize = 5;
 
     public StreamBuffer() {
         this.messages = new LinkedList<String>();
+        //this.maxSize = 5;
     }
 
     /**
@@ -26,9 +28,18 @@ public class StreamBuffer {
      *
      * Note: this method is similar to Buffer.take() in lecture-10
      */
-    public syn String getMessage() {
+    public synchronized String getMessage() {
         // your code here
-        return some_string
+        while(this.messages.isEmpty()){
+            try{
+                wait();
+            }catch (InterruptedException e){
+
+            }
+        }
+        String temp = messages.remove(0);
+        notifyAll();
+        return temp;
     }
 
     /**
@@ -37,14 +48,25 @@ public class StreamBuffer {
      * This method will return a message with given index.
      * Please refer to another getMessage to code it.
      */
-    public syn String getMessage(int index) {
+    public synchronized String getMessage(int index) {
         // your code here
+        while(this.messages.isEmpty() || this.messages.size() < index){
+            try{
+                wait();
+            }catch (InterruptedException e){
+
+            }
+        }
+        String temp = messages.remove(index);
+        notifyAll();
+        return temp;
     }
 
 
     // a size getter function
-    public syn int getBufferSize() {
+    public synchronized int getBufferSize() {
         // your code here
+        return this.messages.size();
     }
 
     /**
@@ -54,7 +76,9 @@ public class StreamBuffer {
      *
      * Note: this method is similar to Buffer.put() in lecture-10
      */
-    public syn void addMessage(str msg) {
+    public synchronized void addMessage(String msg) {
         // your code here
+        messages.add(msg);
+        notifyAll();
     }
 }

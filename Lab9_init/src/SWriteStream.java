@@ -8,22 +8,35 @@
 
 import java.io.*;
 
-public class SWriteStream implements/extends Runnable/Thread {
+public class SWriteStream implements Runnable {
     private FileWriter file = null;
     private String filename = null;
     private StreamBuffer buffer = new StreamBuffer();
 
     public SWriteStream(String filename, StreamBuffer b) {
         // your code here
+        this.filename = filename;
+        this.buffer = b;
     }
 
     // you might use FileWriter class, please check all methods.
     public void openFile(String filename) {
+        //String eResult = null;
+        try {
+            file = new FileWriter(filename);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     // always close file if we do not need it.
     public void closeFile()  {
         // your code here
+        try{
+            file.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public void createSomeMessage(int messageSize) {
@@ -40,8 +53,16 @@ public class SWriteStream implements/extends Runnable/Thread {
      *  Use getter method in Buffer to return a string, You might
      *  use write method in FileWriter class.
      */
-    syn void writeAllBufferToFile() {
+    public synchronized void writeAllBufferToFile() {
         // your code here
+        //int i = 0;
+        while(!buffer.getMessage().isEmpty()){
+            try {
+                file.write(buffer.getMessage());
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -49,5 +70,9 @@ public class SWriteStream implements/extends Runnable/Thread {
      *  OpenFile -> writeAllBufferToFile -> CloseFile
      */
     public void run() {
+        openFile(this.filename);
+        createSomeMessage(10);
+        writeAllBufferToFile();
+        closeFile();
     }
 }

@@ -9,6 +9,7 @@
 public class TestMain {
     public static void main(String args[]) {
        StreamBuffer b = new StreamBuffer();
+        String filename = "test.txt";
        (new Thread(new SWriteStream(filename, b))).start();
        (new Thread(new SReadStream(filename, b))).start();
     }

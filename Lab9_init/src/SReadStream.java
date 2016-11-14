@@ -9,14 +9,15 @@
 
 import java.io.IOException;
 import java.util.*;
+//import java.OpenMp;
 
-public class SReadStream implements/extends Runnable/Thread {
+public class SReadStream implements Runnable {
     private StreamBuffer buffer = new StreamBuffer();
     private String filename = null;
 
     public SReadStream(String filename, StreamBuffer b) {
         this.filename = filename;
-        buffer = b;
+        this.buffer = b;
     }
 
     /**
@@ -31,5 +32,8 @@ public class SReadStream implements/extends Runnable/Thread {
      */
     public void run() {
         // your code here
+        while(!buffer.getMessage().isEmpty()){
+            System.out.println(buffer.getMessage());
+        }
     }
 }
