@@ -17,6 +17,7 @@ public class SWriteStream implements Runnable {
         // your code here
         this.filename = filename;
         this.buffer = b;
+        createSomeMessage(10);
     }
 
     // you might use FileWriter class, please check all methods.
@@ -57,10 +58,12 @@ public class SWriteStream implements Runnable {
     public synchronized void writeAllBufferToFile() {
         // your code here
         //int i = 0;
+
         int temp = buffer.getBufferSize();
+        //System.out.println("wrieAllBufferToFile");
         for(int i = 0; i < temp; i++){
             try {
-                String test = buffer.getMessage();
+                String test = buffer.getMessage(i);
                 file.write(test);
                 //System.out.println(test);
             }catch(IOException e){
@@ -75,7 +78,6 @@ public class SWriteStream implements Runnable {
      */
     public void run() {
         openFile(this.filename);
-        createSomeMessage(10);
         writeAllBufferToFile();
         closeFile();
     }

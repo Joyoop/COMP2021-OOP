@@ -1,17 +1,7 @@
 /**
- * Created by Lx.Yang on 2016/11/13.
- *
- * The SReadStream class will read all messages stored in a .txt
- * file, and print out all messages.
- *
- * Note: you should use StreamBuffer
+ * Created by Isaac on 11/14/16.
  */
-
-import java.io.IOException;
-import java.util.*;
-//import java.OpenMp;
-
-public class SReadStream implements Runnable {
+public class SReadStream implements Runnable{
     private StreamBuffer buffer;
     private String filename = null;
 
