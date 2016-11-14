@@ -30,7 +30,7 @@ public class StreamBuffer {
      */
     public synchronized String getMessage() {
         // your code here
-        while(this.messages.isEmpty()){
+        while(this.messages.isEmpty() || this.messages.size() < 10){
             try{
                 wait();
             }catch (InterruptedException e){
@@ -38,6 +38,7 @@ public class StreamBuffer {
             }
         }
         String temp = messages.remove(0);
+        System.out.println(temp);
         notifyAll();
         return temp;
     }
@@ -50,14 +51,14 @@ public class StreamBuffer {
      */
     public synchronized String getMessage(int index) {
         // your code here
-        while(this.messages.isEmpty() || this.messages.size() < index){
+        while(!this.messages.isEmpty() || this.messages.size() < index){
             try{
                 wait();
             }catch (InterruptedException e){
 
             }
         }
-        String temp = messages.remove(index);
+        String temp = messages.get(index);
         notifyAll();
         return temp;
     }
@@ -79,6 +80,7 @@ public class StreamBuffer {
     public synchronized void addMessage(String msg) {
         // your code here
         messages.add(msg);
+        //System.out.println(msg);
         notifyAll();
     }
 }

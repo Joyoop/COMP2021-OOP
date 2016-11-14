@@ -20,17 +20,18 @@ public class SWriteStream implements Runnable {
     }
 
     // you might use FileWriter class, please check all methods.
-    public void openFile(String filename) {
+    public synchronized void openFile(String filename) {
         //String eResult = null;
         try {
             file = new FileWriter(filename);
         }catch (IOException e){
             e.printStackTrace();
         }
+        System.out.println(file);
     }
 
     // always close file if we do not need it.
-    public void closeFile()  {
+    public synchronized void closeFile()  {
         // your code here
         try{
             file.close();
@@ -39,7 +40,7 @@ public class SWriteStream implements Runnable {
         }
     }
 
-    public void createSomeMessage(int messageSize) {
+    public synchronized void createSomeMessage(int messageSize) {
         for (int i = 0; i<messageSize; ++i) {
             // you can change the message by yourself.
             buffer.addMessage("message id :" + i + "\n");
@@ -56,9 +57,12 @@ public class SWriteStream implements Runnable {
     public synchronized void writeAllBufferToFile() {
         // your code here
         //int i = 0;
-        while(!buffer.getMessage().isEmpty()){
+        int temp = buffer.getBufferSize();
+        for(int i = 0; i < temp; i++){
             try {
-                file.write(buffer.getMessage());
+                String test = buffer.getMessage();
+                file.write(test);
+                //System.out.println(test);
             }catch(IOException e){
                 e.printStackTrace();
             }
