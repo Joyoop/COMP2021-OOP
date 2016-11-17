@@ -17,7 +17,7 @@ public abstract class Expr {
 
     public abstract double evaluate(Environment env);
 
-    public abstract double evaluate() throws RuntimeException;
+    public abstract double evaluate();
 
 
 }
