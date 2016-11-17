@@ -2,14 +2,14 @@
  * Created by Isaac on 11/10/16.
  */
 public class Environment {
-    private String a;
-    private double b;
-    public void addVariable(String a, double b) {
-        this.a = a;
-        this.b = b;
+    private String name;
+    private double value;
+    public void addVariable(String name, double value) {
+        this.name = name;
+        this.value = value;
     }
 
-    public Literal getVar(){
-        return new Literal(b);
+    public Expr getVar(){
+        return new Literal(value);
     }
 }
