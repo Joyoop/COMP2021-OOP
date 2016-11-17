@@ -10,6 +10,9 @@ public class Warrior extends Hero{
         other.setHealth(other.getHealth() - damage);
         System.out.println(getName() + " attacks " + other.getName() + ". Does " + damage + " damage.");
     }
+    public void print(){
+        System.out.println("Warrior's print");
+    }
     public void levelUp(){
         super.levelUp();
         System.out.println(getName() + " is now a level " + getLevel() + " warrior.");

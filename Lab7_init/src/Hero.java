@@ -27,6 +27,9 @@ public abstract class Hero {
     }
 
     public abstract void doAction(Hero other);
+    public void print(int i){
+        System.out.println("hero's print");
+    };
     public void levelUp(){
         level++;
         setHealth(100);

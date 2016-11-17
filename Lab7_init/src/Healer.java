@@ -13,6 +13,11 @@ public class Healer extends Hero{
             mana -= 10;
             System.out.println(getName() + " heals " + other.getName() + " by " + h + " points.");
         } }
+
+    public void print(){
+        System.out.println("Hero's print");
+    }
+
     public void levelUp(){
         super.levelUp();
         mana = 100;

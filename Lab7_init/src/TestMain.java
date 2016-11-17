@@ -37,6 +37,7 @@ public class TestMain {
         r4.setParam(1,0.5);
         */
         Hero hero;
+        Hero hero1;
         Warrior warrior;
         Healer healer;
 
@@ -56,7 +57,11 @@ public class TestMain {
         //warrior.levelUp();
         warrior = new Warrior("Thor");
         hero = new Healer("Althea");
+        hero1 = new Warrior("Warrior2");
+        hero1.print();
+
         warrior.doAction(hero);
+
 
         hero.doAction(hero);
 

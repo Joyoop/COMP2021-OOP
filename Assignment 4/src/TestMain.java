@@ -19,7 +19,7 @@ public class TestMain {
         BinaryExpr b3 = new BinaryExpr(b1, b2, BinaryOp.MULTIPLY);
         System.out.println(b3.evaluate()); // print out: 24.0
 
-        //Task 2
+        //Task 2 & 3
         Variable v1 = new Variable("a"); // Each variable has a single character as its name
         Expr b4 = new BinaryExpr(b2, v1, BinaryOp.DIVIDE);
         System.out.println(b4); // print out: ((3.0 / 1.0) + 5.0) / a
