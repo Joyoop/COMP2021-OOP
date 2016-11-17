@@ -9,6 +9,7 @@ public abstract class Hero {
         name = s;
         level = 1;
         health = 100;
+        System.out.println("hero's constructor");
     }
     public String getName() {
         return name;
@@ -27,9 +28,12 @@ public abstract class Hero {
     }
 
     public abstract void doAction(Hero other);
+    public void print(){
+        System.out.println("hero's print no para");
+    }
     public void print(int i){
-        System.out.println("hero's print");
-    };
+        System.out.println("hero's print with para");
+    }
     public void levelUp(){
         level++;
         setHealth(100);

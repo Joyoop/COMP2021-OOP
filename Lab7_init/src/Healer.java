@@ -1,11 +1,13 @@
 /**
  * Created by Isaac on 11/1/16.
  */
-public class Healer extends Hero{
+public class Healer extends Warrior{
     private int mana;
     public Healer(String name){
         super(name);
-        mana = 100; }
+        mana = 100;
+        System.out.println("healer's constructor");
+    }
     public void doAction(Hero other){
         if(mana >= 10){
             int h = Math.min(getLevel() * 10, 100 - other.getHealth());

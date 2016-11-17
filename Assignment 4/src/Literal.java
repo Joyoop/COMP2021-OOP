@@ -8,14 +8,15 @@ public class Literal extends Expr{
         this.a = 0;
     }
 
-    Literal(double a){
+    Literal(double a) {
         this.a = a;
     }
 
-    @Override
+    /*@Override
     public double evaluate(Environment env){
         return a;
     }
+    */
 
     @Override
     public double evaluate(){

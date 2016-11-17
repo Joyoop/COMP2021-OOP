@@ -4,6 +4,7 @@
 public class Warrior extends Hero{
     public Warrior(String name){
         super(name);
+        System.out.println("warrior's constructor");
     }
     public void doAction(Hero other){
         int damage = Math.min(getLevel() * 5, other.getHealth());

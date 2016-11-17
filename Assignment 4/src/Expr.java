@@ -15,7 +15,10 @@ public abstract class Expr {
         this.BinaryOp = BinaryOp;
     }*/
 
-    public abstract double evaluate(Environment env);
+    public double evaluate(Environment env){
+        System.out.println("This is a mistake!");
+        throw new RuntimeException();
+    }
 
     public abstract double evaluate();
 

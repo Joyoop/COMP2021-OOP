@@ -56,14 +56,14 @@ public class TestMain {
         //warrior = new Healer("Diana");
         //warrior.levelUp();
         warrior = new Warrior("Thor");
-        hero = new Healer("Althea");
-        hero1 = new Warrior("Warrior2");
-        hero1.print();
+        healer = new Healer("Althea");
+        //hero1 = new Warrior("Warrior2");
+        //hero1.print();
 
-        warrior.doAction(hero);
+        //warrior.doAction(hero);
 
 
-        hero.doAction(hero);
+        //hero.doAction(hero);
 
         //Warrior = new Hero("Thor");
         //warrior.doAction(hero);

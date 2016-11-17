@@ -32,24 +32,10 @@ public class BinaryExpr extends Expr{
 
     @Override
     public double evaluate(){
-
-            double a1 = 0;
-            double b1 = 0;
-
-            if (a.getClass().equals(BinaryExpr.class)) {
-                a1 = a.evaluate();
-            }
-            if (b.getClass().equals(BinaryExpr.class)) {
-                b1 = b.evaluate();
-            }
-            if (a.getClass().equals(Literal.class) && b.getClass().equals(Literal.class))
-                return calculate(a.evaluate(), b.evaluate(), BinaryOp);
-            else if (a.getClass().equals(BinaryExpr.class) && b.getClass().equals(Literal.class))
-                return calculate(a1, b.evaluate(), BinaryOp);
-            else if (a.getClass().equals(Literal.class) && b.getClass().equals(BinaryExpr.class))
-                return calculate(a.evaluate(), b1, BinaryOp);
-            else
-                return calculate(a1, b1, BinaryOp);
+            /*if(a.getClass().equals(Variable.class) || b.getClass().equals(Variable.class)){
+                throw new RuntimeException();
+            }*/
+        return calculate(a.evaluate(), b.evaluate(), BinaryOp);
     }
 
     public double calculate(double x, double y, BinaryOp BinaryOp){
