@@ -5,17 +5,18 @@
 import java.util.*;
 
 public class SWriteStream implements Runnable {
-    private FileBuffer buffer = null;
+    private SFileBuffer buffer = null;
 
-    SWriteStream(The input should be a shared buffer) {
+    SWriteStream(SFileBuffer buffer) {
         // your code here
+        this.buffer = buffer;
     }
 
     public void closeFile() {
         // your code here
     }
 
-    public void writeMessage(input){
+    public void writeMessage(String [] input){
         // your code here
         // the writeMessage() is an interface for SFileBuffer.writeMessage()
 

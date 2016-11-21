@@ -5,10 +5,11 @@
 import java.io.*;
 
 public class SReadStream implements Runnable {
-    private FileBuffer buffer = null;
+    private SFileBuffer buffer = null;
 
-    SReadStream(The input should be a shared buffer) {
+    SReadStream(SFileBuffer buffer) {
         // your code here
+        this.buffer = buffer;
     }
 
     public void closeFile() {

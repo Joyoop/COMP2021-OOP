@@ -8,7 +8,7 @@ import java.io.IOException;
 public class TestMain {
     // your code here
     public static void main(String args[]) {
-        SFileBuffer buffer = new SFileBuffer(yourfilename);
+        SFileBuffer buffer = new SFileBuffer("test.txt");
         (new Thread(new SReadStream(buffer))).start();
         (new Thread(new SWriteStream(buffer))).start();
     }
