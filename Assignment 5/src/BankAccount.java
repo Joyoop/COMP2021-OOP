@@ -8,12 +8,29 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public void deposit(int amount){
+    public synchronized void deposit(int amount){
+        try{
+            while(amount >= 0) {
+                wait();
+            }
+            this.balance += amount;
+            notifyAll();
+        }catch(InterruptedException e){
+
+        }
 
     }
 
-    public void withdraw(int amount){
+    public synchronized void withdraw(int amount){
+        try{
+            while(amount > this.balance) {
+                wait();
+            }
+            this.balance -= amount;
+            notifyAll();
+        }catch(InterruptedException e){
 
+        }
     }
 
     public int getBalance(){
