@@ -8,6 +8,10 @@ public class Player {
 	private boolean brokeout = false;
 	boolean isAI = false;
 	Money money = new Money(1500);
+	int firstToss;
+	int secondToss;
+	int thirdToss;
+	int tossCount;
 
 	public Player(int id, String name) {
 		this.id = id;
@@ -60,5 +64,8 @@ public class Player {
 	
 	public boolean isBrokeOut() {
 		return brokeout;
+	}
+	public void setUnown(){
+
 	}
 }

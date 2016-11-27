@@ -46,8 +46,9 @@ public class TestMain {
         //warrior.levelUp();
 
         //task2
-        //hero = new Hero("Althea");
-        //hero.levelUp();
+        healer = new Healer("Althea");
+        hero.levelUp();
+        healer.test();
 
         //warrior = new Warrior("Thor");
         //healer = new Healer("Althea");
@@ -55,8 +56,9 @@ public class TestMain {
 
         //warrior = new Healer("Diana");
         //warrior.levelUp();
-        warrior = new Warrior("Thor");
-        healer = new Healer("Althea");
+        //warrior = new Warrior("Thor");
+        //healer = new Healer("Althea");
+
         //hero1 = new Warrior("Warrior2");
         //hero1.print();
 

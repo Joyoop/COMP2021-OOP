@@ -16,13 +16,7 @@ public class HouseSquare extends Square {
 		this.rent = rent;
 	}
 
-	public void setOwner(int owner) {
-		this.owner = owner;
-	}
 
-	public int getPrice() {
-		return price;
-	}
 
 	@Override
 	public void doAction(Player player, Board board) {

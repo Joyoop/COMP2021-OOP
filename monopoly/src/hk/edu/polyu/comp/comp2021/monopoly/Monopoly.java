@@ -11,7 +11,7 @@ public class Monopoly {
 	}
 	
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
+
 		int firstInput = 0;
 		while(firstInput != 3) {
 			System.out.println("Enter 1 if You want to see the board map");
@@ -29,14 +29,14 @@ public class Monopoly {
 		int totalPlayer = 0;
 
 		while (totalPlayer < 2 || totalPlayer > 8){
-			System.out.println("Enter the Total Player You want: ");
+			System.out.println("Enter the Total Player You want (between 2 and 6): ");
 			totalPlayer = PauseTest.initInput();
-			//scanner.close();
 		}
 
-
 		System.out.println("Enter the No. of AI player you want : ");
-		int[] aiPlayer = PauseTest.aiInput();
+		int	aiInit = PauseTest.initInput();
+		int [] aiPlayer = PauseTest.aiInput(aiInit);
+
 		Monopoly game = new Monopoly(totalPlayer, aiPlayer);
 		game.startGame();
 	}
@@ -55,6 +55,7 @@ public class Monopoly {
 		while (!isGameEnd() && !board.hasWinner()){
 			if(!board.getCurrentPlayer().isBrokeOut()){
 				//PauseTest.triggerDie();
+				//We could trigger the start point here
 
 				int face = board.getCurrentPlayer().tossDie(die);
 				board.movePlayer(board.getCurrentPlayer(), face);
@@ -64,6 +65,8 @@ public class Monopoly {
 		System.out.println("========");
 		if(board.hasWinner()){
 			System.out.println(board.getWinner().getName() + " is won by don't brokeout!");
+
+
 		}else{
 			System.out.println(board.getMaxMoneyPlayer().getName() + " is won by have most money!");
 		}
@@ -73,8 +76,10 @@ public class Monopoly {
 	
 	public boolean isGameEnd() {
 		for(Player player:board.getPlayers()){
-			if(player.getTotalWalk() < 100){ return false; }
+			if(player.getTotalWalk() >= 100) {
+				return true;
+			}
 		}
-		return true;
+		return false;
 	}
 }

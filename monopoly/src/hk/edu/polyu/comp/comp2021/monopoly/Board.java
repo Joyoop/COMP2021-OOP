@@ -8,7 +8,6 @@ public class Board {
 	int totalPlayer = 0;
 	Player[] players;
 	Square[] squares = new Square[20];
-	String[] names = new String[] { "House", "Ho man Tin", "Town", "City", "Peace", "Village", "Jade", "Soi 4", "White", "Dark" };
 	
 	public Board(int totalPlayer, int[] AI) {
 		players = new Player[totalPlayer];
@@ -49,33 +48,69 @@ public class Board {
 
 	}
 	
-	public Square movePlayer(Player player, int face) {
-		return movePlayer(player, face, true);
+	public void movePlayer(Player player, int face) {
+		movePlayer(player, face, true);
 	}
 	
-	public Square movePlayer(Player player, int face, boolean count) {
+	public void movePlayer(Player player, int face, boolean count) {
 		//see if the current player is broke out
+		/*
 		if(player.isBrokeOut()){
-			return squares[player.getCurrentPosition()];
+			//return squares[player.getCurrentPosition()];
+		}*/
+		int newPosition;
+		if(player.getCurrentPosition() == 5){
+			if(((JailSquare)squares[5]).getOutJail(player, this, face) == -1) {
+				newPosition = normalizePosition(player.getCurrentPosition());
+
+                player.setPosition(newPosition);
+
+                Util.print(player, player.getName() + " stays in " + squares[player.getCurrentPosition()].getName());
+
+                //squares[newPosition].doAction(player, this);
+
+			}else if(((JailSquare)squares[5]).getOutJail(player, this, face) == 1){
+
+                squares[player.getCurrentPosition()].doAction(player, this);
+
+				newPosition = normalizePosition(player.getCurrentPosition() + face);
+
+                player.setPosition(newPosition);
+
+                Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
+
+                squares[newPosition].doAction(player, this);
+
+			}else if(((JailSquare)squares[5]).getOutJail(player, this, face) == 0){
+                newPosition = normalizePosition(player.getCurrentPosition() + face);
+
+                player.setPosition(newPosition);
+
+                Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
+
+                squares[newPosition].doAction(player, this);
+            }
+		}
+		else{
+			newPosition = normalizePosition(player.getCurrentPosition() + face);
+
+            player.setPosition(newPosition);
+
+            Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
+
+            squares[newPosition].doAction(player, this);
 		}
 
-		int newPosition = normalizePosition(player.getCurrentPosition() + face);
-
-		player.setPosition(newPosition);
-
-		Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
-
-		squares[newPosition].doAction(player, this);
 
 		if(player.getMoney().isBrokeOut()){
 			Util.print(player, player.getName() + " has been broke out!");
+			System.out.println(player.getID());
 			player.setBrokeOut(true);
 		}else{
 			if(count){
 				player.nextTurn();
 			}
 		}
-		return squares[newPosition];
 	}
 	
 	public boolean hasWinner() {

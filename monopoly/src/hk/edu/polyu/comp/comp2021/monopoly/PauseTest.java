@@ -17,23 +17,39 @@ import java.util.Scanner;
 
     public static int initInput(){
         Scanner scanner = new Scanner(System.in);
-        int input  = Integer.parseInt(scanner.nextLine());
+        int input = 0;
+        try {
+            input = Integer.parseInt(scanner.nextLine());
+
+        }catch(NumberFormatException e){
+            System.out.println("Please enter an Integer.");
+        }
         return input;
     }
 
-    public static int[] aiInput(){
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        String[] items = input.split(",");
+    public static int [] aiInput(int integer) {
+        String input = Integer.toString(integer);
+        String[] items = input.split("");
+        //int[] test = new int[totalPlayer];
+        /*
+        try{
+            for(int j = 0; j < items.length; j++){
+                test[Integer.parseInt(items[j])] = 0;
+            }
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("AI No. should be within the totalplayer.");
+        }
+*/
         int[] result = new int[items.length];
         for (int i = 0; i < items.length; i++) {
             try {
                 result[i] = Integer.parseInt(items[i]);
             } catch (NumberFormatException nfe) {
-                //NOTE: write something here if you need to recover from formatting errors
-            };
+                System.out.println("Please enter a sequence of numbers for AI players");
+            }
         }
         return result;
+
     }
 
     public static boolean userInput() {

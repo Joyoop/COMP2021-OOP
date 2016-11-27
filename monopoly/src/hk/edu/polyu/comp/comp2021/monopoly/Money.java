@@ -23,8 +23,10 @@ public class Money {
 		if(money%10 == 0) {
 			money *= 0.9;
 		}else{
+			int x = money%10;
 			money -= money%10;
 			money *= 0.9;
+			money += x;
 		}
 	}
 	

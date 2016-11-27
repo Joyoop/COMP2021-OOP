@@ -25,4 +25,8 @@ public class Healer extends Warrior{
         mana = 100;
         System.out.println(getName() + " is now a level " + getLevel() + " healer.");
     }
+
+    public void test(){
+        System.out.println("This is a test function.");
+    }
 }
