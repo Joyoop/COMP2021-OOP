@@ -1,5 +1,6 @@
-package hk.edu.polyu.comp.comp2021.monopoly;
-
+package hk.edu.polyu.comp.comp2021.monopoly;/**
+ * Created by Isaac on 11/27/16.
+ */
 public class JailSquare extends Square {
 	public JailSquare(String name) {
 		super(name);

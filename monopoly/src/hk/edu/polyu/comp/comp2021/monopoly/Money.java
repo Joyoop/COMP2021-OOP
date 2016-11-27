@@ -18,6 +18,10 @@ public class Money {
 	public void addMoney(int amount) {
 		money += amount;
 	}
+
+	public void taxMoney(){
+		money *= 0.9;
+	}
 	
 	public void substractMoney(int amount) {
 		money -= amount;
