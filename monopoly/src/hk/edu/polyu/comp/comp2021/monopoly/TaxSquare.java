@@ -9,7 +9,7 @@ public class TaxSquare extends Square{
     }
 
     @Override
-    public void doAction(Player player, Board board) {
+    public void squareMove(Player player, Board board) {
         Util.print(player, player.getName() + " is at Tax square... Being taxed for 10% of his/her money");
         player.getMoney().taxMoney();
     }

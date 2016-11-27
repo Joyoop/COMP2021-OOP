@@ -9,7 +9,7 @@ public class ChanceSquare extends Square{
     }
 
     @Override
-    public void doAction(Player player, Board board) {
+    public void squareMove(Player player, Board board) {
         Random temp = new Random();
         int loseAmount = temp.nextInt(30) * 10;
         int gainAmount = temp.nextInt(20) * 10;

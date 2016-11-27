@@ -71,7 +71,7 @@ public class Board {
 
 			}else if(((JailSquare)squares[5]).getOutJail(player, this, face) == 1){
 
-                squares[player.getCurrentPosition()].doAction(player, this);
+                squares[player.getCurrentPosition()].squareMove(player, this);
 
 				newPosition = normalizePosition(player.getCurrentPosition() + face);
 
@@ -79,7 +79,7 @@ public class Board {
 
                 Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
 
-                squares[newPosition].doAction(player, this);
+                squares[newPosition].squareMove(player, this);
 
 			}else if(((JailSquare)squares[5]).getOutJail(player, this, face) == 0){
                 newPosition = normalizePosition(player.getCurrentPosition() + face);
@@ -88,7 +88,7 @@ public class Board {
 
                 Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
 
-                squares[newPosition].doAction(player, this);
+                squares[newPosition].squareMove(player, this);
             }
 		}
 		else{
@@ -98,7 +98,7 @@ public class Board {
 
             Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
             if(newPosition != 5) {
-                squares[newPosition].doAction(player, this);
+                squares[newPosition].squareMove(player, this);
             }
 		}
 

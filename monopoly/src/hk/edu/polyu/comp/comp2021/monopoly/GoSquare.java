@@ -8,7 +8,7 @@ public class GoSquare extends Square {
 	}
 	
 	@Override
-	public void doAction(Player player, Board board) {
+	public void squareMove(Player player, Board board) {
 		Util.print(player, player.getName() + " is at Go... Giving 1500 money");
 		player.getMoney().addMoney(1500);
 	}

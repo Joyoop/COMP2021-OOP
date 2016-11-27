@@ -19,7 +19,7 @@ public class HouseSquare extends Square {
 
 
 	@Override
-	public void doAction(Player player, Board board) {
+	public void squareMove(Player player, Board board) {
 		//if player.state = 0
 		boolean input2;
 		if(owner < 0){

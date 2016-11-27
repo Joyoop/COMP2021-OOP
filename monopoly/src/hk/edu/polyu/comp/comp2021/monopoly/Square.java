@@ -12,5 +12,5 @@ public abstract class Square {
 		return name;
 	}
 	
-	public abstract void doAction(Player player, Board board);
+	public abstract void squareMove(Player player, Board board);
 }

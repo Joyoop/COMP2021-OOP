@@ -9,7 +9,7 @@ public class FreeSquare extends Square{
     }
 
     @Override
-    public void doAction(Player player, Board board) {
+    public void squareMove(Player player, Board board) {
         Util.print(player, player.getName() + " is at Free Parking square... He/She literally does nothing.");
     }
 }
