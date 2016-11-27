@@ -97,8 +97,9 @@ public class Board {
             player.setPosition(newPosition);
 
             Util.print(player, player.getName() + " goes to " + squares[player.getCurrentPosition()].getName());
-
-            squares[newPosition].doAction(player, this);
+            if(newPosition != 5) {
+                squares[newPosition].doAction(player, this);
+            }
 		}
 
 
