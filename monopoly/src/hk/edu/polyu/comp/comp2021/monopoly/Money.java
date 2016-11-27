@@ -20,7 +20,12 @@ public class Money {
 	}
 
 	public void taxMoney(){
-		money *= 0.9;
+		if(money%10 == 0) {
+			money *= 0.9;
+		}else{
+			money -= money%10;
+			money *= 0.9;
+		}
 	}
 	
 	public void substractMoney(int amount) {

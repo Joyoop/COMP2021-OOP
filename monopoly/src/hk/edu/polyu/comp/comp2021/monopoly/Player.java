@@ -7,7 +7,7 @@ public class Player {
 	String name;
 	private boolean brokeout = false;
 	boolean isAI = false;
-	Money money = new Money(5000);
+	Money money = new Money(1500);
 
 	public Player(int id, String name) {
 		this.id = id;
