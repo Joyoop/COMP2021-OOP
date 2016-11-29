@@ -67,6 +67,16 @@ import java.util.Scanner;
         return input2;
     }
 
+    public static int userInput2(){
+        Scanner scanner = new Scanner(System.in);
+        int input;
+        //boolean input2 = false;
+        input = Integer.parseInt(scanner.nextLine());
+        //String input3 = scanner.nextLine();
+        //scanner.close();
+        return input;
+    }
+
     public static void closeScanner(){
         Scanner scanner = new Scanner(System.in);
         scanner.close();

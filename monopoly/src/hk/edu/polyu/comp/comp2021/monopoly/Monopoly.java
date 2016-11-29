@@ -54,11 +54,30 @@ public class Monopoly {
 		System.out.println("========");
 		while (!isGameEnd() && !board.hasWinner()){
 			if(!board.getCurrentPlayer().isBrokeOut()){
-				//PauseTest.triggerDie();
-				//We could trigger the start point here
+				int input = 0;
 
-				int face = board.getCurrentPlayer().tossDie(die);
-				board.movePlayer(board.getCurrentPlayer(), face);
+				if(!board.getCurrentPlayer().getAI()) {
+					while (input == 2 || input < 1 || input > 4) {
+						System.out.println("1 for continue, 2 for report, 3 for auto and 4 for retire");
+						//We could trigger the start point here
+						input = PauseTest.userInput2();
+
+						if (input == 1) {
+							break;
+						} else if (input == 2) {
+							System.out.println(board.getPlayers());
+						} else if (input == 3) {
+							board.getCurrentPlayer().setAI(true);
+						} else if (input == 4) {
+							board.getCurrentPlayer().setBrokeOut(true);
+							System.out.println(board.getCurrentPlayer()+" has quit the game!");
+						}
+					}
+				}
+				if(!board.getCurrentPlayer().isBrokeOut()) {
+					int face = board.getCurrentPlayer().tossDie(die);
+					board.movePlayer(board.getCurrentPlayer(), face);
+				}
 			}
 			board.nextTurn();
 		}
