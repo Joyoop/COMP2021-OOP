@@ -15,9 +15,11 @@ public class Board {
 		for(int i = 0;i < players.length;i++){
 			players[i] = new Player(i, "Player " + (i + 1));
 		}
-		System.out.println(AI);
-		for(int j = 0; j < AI.length ; j++){
-			players[AI[j]-1].setAI(true);
+		//System.out.println(AI);
+		if(AI[0] != 0) {
+			for (int j = 0; j < AI.length; j++) {
+				players[AI[j] - 1].setAI(true);
+			}
 		}
 
 		//first six squares
@@ -159,6 +161,20 @@ public class Board {
 		return players;
 	}
 	
+	public void getReport(){
+		for (int i = 0; i < squares.length; i++){
+			int tempSquareNo = i + 1;
+			System.out.println("Square "+ tempSquareNo + " is "+ squares[i].getName());
+		}
+		for (int j = 0; j < players.length; j++){
+			int tempPlayerNo = j + 1;
+			int tempPlayerSquareNo = players[j].getCurrentPosition() + 1;
+			System.out.println("Player " + tempPlayerNo +" is at " + tempPlayerSquareNo);
+		}
+	}
+
+
+
 	public void nextTurn() {
 		if(++currentTurn >= players.length){
 			currentTurn = 0;
