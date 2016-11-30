@@ -12,7 +12,7 @@ public class Withdrawer implements Runnable{
         for (int i = 0; i < 10; i++){
             ba.withdraw(amount); // Note that a withdraw is only allowed when the
             // balance is greater than the amount to withdraw
-            System.out.print(ba.getBalance());
+           //System.out.print(ba.getBalance());
         }
     }
 }

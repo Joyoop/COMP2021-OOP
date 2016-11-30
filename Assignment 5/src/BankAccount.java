@@ -9,21 +9,13 @@ public class BankAccount {
     }
 
     public synchronized void deposit(int amount){
-        try{
-            while(amount >= 0) {
-                wait();
-            }
             this.balance += amount;
             notifyAll();
-        }catch(InterruptedException e){
-
-        }
-
     }
 
     public synchronized void withdraw(int amount){
         try{
-            while(amount > this.balance) {
+            while(amount == 0) {
                 wait();
             }
             this.balance -= amount;
