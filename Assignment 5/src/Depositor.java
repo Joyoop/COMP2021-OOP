@@ -2,9 +2,9 @@
  * Created by Isaac on 11/27/16.
  */
 public class Depositor implements Runnable{
-    private BankAccount ba;
+    private BankAccount2 ba;
     private int amount;
-    public Depositor(BankAccount ba, int amount){
+    public Depositor(BankAccount2 ba, int amount){
         this.ba = ba;
         this.amount = amount;
     }

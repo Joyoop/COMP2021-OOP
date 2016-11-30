@@ -3,7 +3,7 @@
  */
 public class WithdrawerDepositor {
     public static void main(String[] args) {
-        BankAccount ba = new BankAccount(0); // initialize the bank account to have balance 0
+        BankAccount2 ba = new BankAccount2(0); // initialize the bank account to have balance 0
         Thread withdrawer = new Thread(new Withdrawer(ba, 3));
         Thread depositor = new Thread(new Depositor(ba, 5));
         withdrawer.start();

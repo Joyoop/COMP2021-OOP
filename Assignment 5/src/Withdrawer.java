@@ -2,9 +2,9 @@
  * Created by Isaac on 11/27/16.
  */
 public class Withdrawer implements Runnable{
-    private BankAccount ba;
+    private BankAccount2 ba;
     private int amount;
-    public Withdrawer(BankAccount ba, int amount){
+    public Withdrawer(BankAccount2 ba, int amount){
         this.ba = ba;
         this.amount = amount;
     }
