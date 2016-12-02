@@ -11,10 +11,13 @@ public class ChanceSquare extends Square{
     @Override
     public void squareMove(Player player, Board board) {
         Random temp = new Random();
-        int loseAmount = temp.nextInt(30) * 10;
-        int gainAmount = temp.nextInt(20) * 10;
+        final int LOSRAMOUNTNO = 30;
+        final int GAINAMOUNTNO = 20;
+        final double RANDOMRANT = 0.5;
+        int loseAmount = temp.nextInt(LOSRAMOUNTNO) * 10;
+        int gainAmount = temp.nextInt(GAINAMOUNTNO) * 10;
 
-        if(Math.random() < 0.5) {
+        if(Math.random() < RANDOMRANT) {
             Util.print(player, player.getName() + " is at Chance square... Gaining "+gainAmount+" money");
             player.getMoney().addMoney(gainAmount);
         }else{

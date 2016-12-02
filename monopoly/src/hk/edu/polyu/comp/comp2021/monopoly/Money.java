@@ -20,12 +20,13 @@ public class Money {
 	}
 
 	public void taxMoney(){
+		final double TAXRENT = 0.9;
 		if(money%10 == 0) {
-			money *= 0.9;
+			money *= TAXRENT;
 		}else{
 			int x = money%10;
 			money -= money%10;
-			money *= 0.9;
+			money *= TAXRENT;
 			money += x;
 		}
 	}

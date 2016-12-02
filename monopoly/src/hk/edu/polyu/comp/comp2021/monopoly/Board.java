@@ -28,30 +28,51 @@ public class Board {
 		final int CENTRALRENT = 70;
 		final int WANCHAIPRICE = 700;
 		final int WANCHAIRENT = 65;
+		final int STANLEYPRICE = 600;
+		final int STANLEYRENT = 60;
+		final int SHEKOPRICE = 400;
+		final int SHEKORENT = 10;
+		final int MONGKOKPRICE = 500;
+		final int MONGKOKRENT = 40;
+		final int TSINGYIPRICE =400;
+		final int TSINGYIRENT = 15;
+		final int SHATINPRICE =700;
+		final int SHATINRENT = 75;
+		final int TUENMUNPRICE =400;
+		final int TUENMUNRENT = 20;
+		final int TAIPOPRICE =500;
+		final int TAIPORENT = 25;
+		final int SAIKUNGPRICE =400;
+		final int SAIKUNGRENT = 10;
+		final int YUENLONGPRICE =400;
+		final int YUENLONGRENT = 25;
+		final int TAIOPRICE =600;
+		final int TAIORENT = 25;
+		int indexOfArray = 9;
 		squares[0] = new GoSquare("GO");
 		squares[1] = new HouseSquare("CENTRAL",CENTRALPRICE,CENTRALRENT);
 		squares[2] = new HouseSquare("Wan Chai",WANCHAIPRICE,WANCHAIRENT);
 		squares[3] = new TaxSquare("Tax Square");
-		squares[4] = new HouseSquare("Stanley",600,60);
+		squares[4] = new HouseSquare("Stanley",STANLEYPRICE,STANLEYRENT);
 		squares[5] = new JailSquare("Jail");
 
 		//second six squares
-		squares[6] = new HouseSquare("Shek O",400,10);
-		squares[7] = new HouseSquare("Mong Kok",500,40);
+		squares[6] = new HouseSquare("Shek O",SHEKOPRICE,SHEKORENT);
+		squares[7] = new HouseSquare("Mong Kok",MONGKOKPRICE,MONGKOKRENT);
 		squares[8] = new ChanceSquare("Chance 1");
-		squares[9] = new HouseSquare("Tsing Yi",400,15);
+		squares[9] = new HouseSquare("Tsing Yi",TSINGYIPRICE,TSINGYIRENT);
 		squares[10] = new FreeSquare("Free Parking");
-		squares[11] = new HouseSquare("Shatin",700,75);
+		squares[indexOfArray + 2] = new HouseSquare("Shatin",SHATINPRICE,SHATINRENT);
 
 		//last eight squares
-		squares[12] = new ChanceSquare("Chance 2");
-		squares[13] = new HouseSquare("Tuen Mun",400,20);
-		squares[14] = new HouseSquare("Tai Po",500,25);
-		squares[15] = new GoToJailSquare("Go To Jail");
-		squares[16] = new HouseSquare("Sai Kung",400,10);
-		squares[17] = new HouseSquare("Yuen Long",400,25);
-		squares[18] = new ChanceSquare("Chance 3");
-		squares[19] = new HouseSquare("Tai O",600,25);
+		squares[indexOfArray + 3] = new ChanceSquare("Chance 2");
+		squares[indexOfArray + 4] = new HouseSquare("Tuen Mun",TUENMUNPRICE,TUENMUNRENT);
+		squares[indexOfArray + 5] = new HouseSquare("Tai Po",TAIPOPRICE,TAIPORENT);
+		squares[indexOfArray + 6] = new GoToJailSquare("Go To Jail");
+		squares[indexOfArray + 7] = new HouseSquare("Sai Kung",SAIKUNGPRICE,SAIKUNGRENT);
+		squares[indexOfArray + 8] = new HouseSquare("Yuen Long",YUENLONGPRICE,YUENLONGRENT);
+		squares[indexOfArray + 9] = new ChanceSquare("Chance 3");
+		squares[indexOfArray + 10] = new HouseSquare("Tai O",TAIOPRICE,TAIORENT);
 
 	}
 	

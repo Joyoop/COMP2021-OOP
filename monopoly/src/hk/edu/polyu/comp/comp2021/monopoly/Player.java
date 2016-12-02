@@ -7,7 +7,8 @@ public class Player {
 	private String name;
 	private boolean brokeout = false;
 	private boolean isAI = false;
-	private Money money = new Money(1500);
+	private final int STARTMONEY = 1500;
+	private Money money = new Money(STARTMONEY);
 	private int firstToss;
 	private int secondToss;
 	private int thirdToss;

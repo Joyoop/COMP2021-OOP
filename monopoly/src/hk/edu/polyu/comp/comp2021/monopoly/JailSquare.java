@@ -82,8 +82,9 @@ public class JailSquare extends Square {
 
 	@Override
 	public void squareMove(Player player, Board board) {
+		final int JAILRENT = 50;
 		Util.print(player, player.getName() + " has been Jail and lost 50 money");
-		player.getMoney().substractMoney(50);
+		player.getMoney().substractMoney(JAILRENT);
 	}
 
 }
