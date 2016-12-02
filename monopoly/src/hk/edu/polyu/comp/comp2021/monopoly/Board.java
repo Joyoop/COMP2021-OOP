@@ -1,13 +1,13 @@
 package hk.edu.polyu.comp.comp2021.monopoly;
-import java.util.Random;
 /**
  * Created by Isaac on 11/27/16.
  */
 public class Board {
-	int currentTurn = 0;
-	int totalPlayer = 0;
-	Player[] players;
-	Square[] squares = new Square[20];
+	private int currentTurn = 0;
+	private int totalPlayer = 0;
+	private Player[] players;
+	private static final int SQUARE_NO = 20;
+	private Square[] squares = new Square[SQUARE_NO];
 	
 	public Board(int totalPlayer, int[] AI) {
 		players = new Player[totalPlayer];
@@ -23,8 +23,11 @@ public class Board {
 		}
 
 		//first six squares
+		String [] squaresName = {"Go", "Central","Wan Chai", "Tax Square", "Stanley", "Shek O", "Mong Kok", "Chance 1","Tsing Yi","Free Parking","Shatin","Chance 2","Tuen Mun","Tai Po","Go To Jail","Sai Kung","Yuen Long","Chance 3","Tai O"};
+		final int CENTRALPRICE = 800;
+		final int CENTRALRENT = 70;
 		squares[0] = new GoSquare("GO");
-		squares[1] = new HouseSquare("CENTRAL",800,90);
+		squares[1] = new HouseSquare("CENTRAL",CENTRALPRICE,CENTRALRENT);
 		squares[2] = new HouseSquare("Wan Chai",700,65);
 		squares[3] = new TaxSquare("Tax Square");
 		squares[4] = new HouseSquare("Stanley",600,60);
@@ -125,12 +128,13 @@ public class Board {
 		}
 		return ingame <= 1;
 	}
+	/*
 	public boolean hasDraw(Player player){
 		if(player.totalWalk == 100){
 			return true;
 		}
 		return false;
-	}
+	}*/
 	public Player getWinner() {
 		if(!hasWinner()){ return null; }
 		for(Player player:players){

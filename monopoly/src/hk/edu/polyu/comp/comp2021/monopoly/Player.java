@@ -1,17 +1,17 @@
 package hk.edu.polyu.comp.comp2021.monopoly;
 
 public class Player {
-	int totalWalk = 0;
-	int position = 0;
-	int id;
-	String name;
+	private int totalWalk = 0;
+	private int position = 0;
+	private int id;
+	private String name;
 	private boolean brokeout = false;
-	boolean isAI = false;
-	Money money = new Money(1500);
-	int firstToss;
-	int secondToss;
-	int thirdToss;
-	int tossCount;
+	private boolean isAI = false;
+	private Money money = new Money(1500);
+	private int firstToss;
+	private int secondToss;
+	private int thirdToss;
+	private int tossCount;
 
 	public Player(int id, String name) {
 		this.id = id;
@@ -68,4 +68,30 @@ public class Player {
 	public void setUnown(){
 
 	}
+
+	public int getFirstToss(){
+		return this.firstToss;
+	}
+	public int getSecondToss(){
+		return this.secondToss;
+	}
+	public int getThridToss(){
+		return this.thirdToss;
+	}
+	public int getTossCount(){
+		return this.tossCount;
+	}
+	public void setFirstToss(int first){
+		this.firstToss = first;
+	}
+	public void setSecondToss(int second){
+		this.secondToss = second;
+	}
+	public void setThirdToss(int third){
+		this.thirdToss = third;
+	}
+	public void setTossCount(int count){
+		this.tossCount = count;
+	}
+
 }

@@ -12,9 +12,9 @@ public class JailSquare extends Square {
 
 	public int getOutJail(Player player,Board board, int face){
 		Util.print(player, player.getName() + " has been Jail.");
-		if(player.tossCount == 0){
-			player.tossCount ++;
-			player.firstToss = face;
+		if(player.getTossCount() == 0){
+			player.setTossCount(player.getTossCount() + 1);
+			player.setFirstToss(face);
 			boolean input;
 			if(player.getAI()){
 				Random rand = new Random();
@@ -25,20 +25,20 @@ public class JailSquare extends Square {
 			}
 			if(input){
 				//pay the fine
-				player.firstToss = 0;
-				player.tossCount = 0;
+				player.setFirstToss(0);
+				player.setTossCount(0);
 				return 1;
 			}else{
 				return -1;
 			}
-		}else if(player.tossCount == 1){
-			player.tossCount++;
-			player.secondToss = face;
-			if(player.firstToss == player.secondToss){
+		}else if(player.getTossCount() == 1){
+			player.setTossCount(player.getTossCount() + 1);
+			player.setSecondToss(face);
+			if(player.getFirstToss() == player.getSecondToss()){
 				//bingo! I win!
-				player.firstToss = 0;
-				player.secondToss = 0;
-				player.tossCount = 0;
+				player.setFirstToss(0);
+				player.setSecondToss(0);
+				player.setTossCount(0);
 				return 0;
 			}else{
 				boolean input;
@@ -51,28 +51,28 @@ public class JailSquare extends Square {
 				}
 				if(input){
 					//pay the fine
-					player.firstToss = 0;
-					player.secondToss = 0;
-					player.tossCount = 0;
+					player.setFirstToss(0);
+					player.setSecondToss(0);
+					player.setTossCount(0);
 					return 1;
 				}else{
 					//not paying the fine
 					return -1;
 				}
 			}
-		}else if(player.tossCount == 2){
-			player.thirdToss = face;
-			if(player.thirdToss == player.secondToss|| player.thirdToss == player.firstToss){
-				player.firstToss = 0;
-				player.secondToss = 0;
-				player.thirdToss = 0;
-				player.tossCount = 0;
+		}else if(player.getTossCount() == 2){
+			player.setThirdToss(face);
+			if(player.getThridToss() == player.getSecondToss()|| player.getThridToss() == player.getFirstToss()){
+				player.setFirstToss(0);
+				player.setSecondToss(0);
+				player.setThirdToss(0);
+				player.setTossCount(0);
 				return 0;
 			}else{
-				player.firstToss = 0;
-				player.secondToss = 0;
-				player.thirdToss = 0;
-				player.tossCount = 0;
+				player.setFirstToss(0);
+				player.setSecondToss(0);
+				player.setThirdToss(0);
+				player.setTossCount(0);
 				return 1;
 			}
 		}
