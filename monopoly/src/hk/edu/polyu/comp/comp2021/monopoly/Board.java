@@ -26,9 +26,11 @@ public class Board {
 		String [] squaresName = {"Go", "Central","Wan Chai", "Tax Square", "Stanley", "Shek O", "Mong Kok", "Chance 1","Tsing Yi","Free Parking","Shatin","Chance 2","Tuen Mun","Tai Po","Go To Jail","Sai Kung","Yuen Long","Chance 3","Tai O"};
 		final int CENTRALPRICE = 800;
 		final int CENTRALRENT = 70;
+		final int WANCHAIPRICE = 700;
+		final int WANCHAIRENT = 65;
 		squares[0] = new GoSquare("GO");
 		squares[1] = new HouseSquare("CENTRAL",CENTRALPRICE,CENTRALRENT);
-		squares[2] = new HouseSquare("Wan Chai",700,65);
+		squares[2] = new HouseSquare("Wan Chai",WANCHAIPRICE,WANCHAIRENT);
 		squares[3] = new TaxSquare("Tax Square");
 		squares[4] = new HouseSquare("Stanley",600,60);
 		squares[5] = new JailSquare("Jail");
