@@ -1,6 +1,5 @@
 package hk.edu.polyu.comp.comp2021.monopoly;
 
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**

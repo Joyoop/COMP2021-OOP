@@ -1,14 +1,13 @@
 package hk.edu.polyu.comp.comp2021.monopoly;
-import java.io.IOException;
+
 import java.util.Random;
-import java.util.Scanner;
 /**
  * Created by Isaac on 11/27/16.
  */
 public class HouseSquare extends Square {
-	int price;
-	int owner = -1;
-	int rent;
+	private int price;
+	private int owner = -1;
+	private int rent;
 
 	public HouseSquare(String name, int price, int rent) {
 		super(name);

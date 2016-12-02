@@ -1,10 +1,8 @@
 package hk.edu.polyu.comp.comp2021.monopoly;
 
-import java.util.Scanner;
-
 public class Monopoly {
-	Die die = new Die();
-	Board board;
+	private Die die = new Die();
+	private Board board;
 	
 	public Monopoly(int totalPlayer, int[] aiList) {
 		board = new Board(totalPlayer, aiList);
