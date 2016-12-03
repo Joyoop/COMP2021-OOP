@@ -96,7 +96,7 @@ public class Monopoly {
 						} else if (input == 3) {
 							board.getCurrentPlayer().setAI(true);
 						} else if (input == 4) {
-							board.getCurrentPlayer().setBrokeOut(true);
+							board.getCurrentPlayer().setBrokeOut(true, board);
 							System.out.println(board.getCurrentPlayer().getName()+" has quit the game!");
 						}
 					}

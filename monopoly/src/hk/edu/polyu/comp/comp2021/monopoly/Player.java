@@ -59,16 +59,23 @@ public class Player {
 	public void setAI(boolean x){
 		this.isAI = x;
 	}
-	public void setBrokeOut(boolean brokeout) {
+	public void setBrokeOut(boolean brokeout, Board board) {
+		int playerID = this.getID();
+		this.setUnown(playerID, board);
 		this.brokeout = brokeout;
 	}
 	
 	public boolean isBrokeOut() {
 		return brokeout;
 	}
-	public void setUnown(){
-
+	public void setUnown(int playerID, Board board){
+		for(int i = 0; i < 20; i++){
+			if(board.getSquares(i) instanceof HouseSquare){
+				if(board.getSquares(i).getOwner() == playerID) {board.getSquares(i).setOwner(-1); }
+			}
+		}
 	}
+
 
 	public int getFirstToss(){
 		return this.firstToss;

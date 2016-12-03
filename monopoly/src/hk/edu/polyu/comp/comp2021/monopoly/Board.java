@@ -134,7 +134,7 @@ public class Board {
 		if(player.getMoney().isBrokeOut()){
 			Util.print(player, player.getName() + " has been broke out!");
 			System.out.println(player.getID());
-			player.setBrokeOut(true);
+			player.setBrokeOut(true, this);
 		}else{
 			if(count){
 				player.nextTurn();
@@ -207,12 +207,17 @@ public class Board {
 			currentTurn = 0;
 		}
 	}
-	
+
 	public Player getPlayer(int id) {
 		return players[id];
+	}
+	public Square getSquares(int number) {
+		return squares[number];
 	}
 	
 	public int getTotalSquare() {
 		return squares.length;
 	}
+
+
 }

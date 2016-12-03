@@ -11,6 +11,10 @@ public abstract class Square {
 	public String getName() {
 		return name;
 	}
+
+	public int getOwner(){return owner;}
+
+	public void setOwner(int owner){this.owner = owner;}
 	
 	public abstract void squareMove(Player player, Board board);
 }
